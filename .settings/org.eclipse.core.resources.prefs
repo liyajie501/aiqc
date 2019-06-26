@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//deploy/aiqc/application-admin.yml=UTF-8
+encoding//deploy/aiqc/application-core.yml=UTF-8
+encoding//aiqc-db/mybatis-generator/generatorConfig.xml=UTF-8

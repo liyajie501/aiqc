@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: db, core, zj
+  messages:
+    encoding: UTF-8
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root:  ERROR
+    org.springframework:  ERROR
+    org.mybatis:  ERROR
+    com.sinosoft.aiqc.core:  ERROR
+    com.sinosoft.aiqc.db:  ERROR
+    com.sinosoft.aiqc.admin:  ERROR
+    com.sinosoft.aiqc.wx:  ERROR
+    com.sinosoft.aiqc:  ERROR

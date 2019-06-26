@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="mysqlgenerator" targetRuntime="MyBatis3">
+        <property name="autoDelimitKeywords" value="true"/>
+        <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- 自动生成toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!-- 自动生成equals方法和hashcode方法 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+
+        <!-- 非官方插件 https://github.com/itfsw/mybatis-generator-plugin -->
+        <!-- 查询单条数据插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.SelectOneByExamplePlugin"/>
+        <!-- 查询结果选择性返回插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.SelectSelectivePlugin"/>
+        <!-- Example Criteria 增强插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.ExampleEnhancedPlugin"/>
+        <!-- 数据Model属性对应Column获取插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.ModelColumnPlugin"/>
+        <!-- 逻辑删除插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.LogicalDeletePlugin">
+            <!-- 这里配置的是全局逻辑删除列和逻辑删除值，当然在table中配置的值会覆盖该全局配置 -->
+            <!-- 逻辑删除列类型只能为数字、字符串或者布尔类型 -->
+            <property name="logicalDeleteColumn" value="deleted"/>
+            <!-- 逻辑删除-已删除值 -->
+            <property name="logicalDeleteValue" value="1"/>
+            <!-- 逻辑删除-未删除值 -->
+            <property name="logicalUnDeleteValue" value="0"/>
+        </plugin>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!--<property name="suppressAllComments" value="true"/>-->
+        </commentGenerator>
+
+        <!--数据库连接信息-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://47.95.219.202:3306/litemall?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;verifyServerCertificate=false&amp;useSSL=false"
+                        userId="query"
+                        password="query@2019"/>
+
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.sinosoft.aiqc.db.domain" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="com.sinosoft.aiqc.db.dao" targetProject="src/main/resources"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.sinosoft.aiqc.db.dao"
+                             targetProject="src/main/java"/>
+        <!--表名-->
+        <table tableName="yyzj_c_alarm">
+        </table>
+
+        <table tableName="yyzj_c_alarm_to_sys">
+        </table>
+
+        <table tableName="yyzj_c_analyzer">
+        </table>
+
+        <table tableName="yyzj_c_appeal">
+        </table>
+
+        <table tableName="yyzj_c_assign_task">
+        </table>
+
+        <table tableName="yyzj_c_category">
+        </table>
+
+        <table tableName="yyzj_c_engine">
+        </table>
+
+        <table tableName="yyzj_c_engine_to_sys">
+        </table>
+
+        <table tableName="yyzj_c_ignore_word">
+        </table>
+
+        <table tableName="yyzj_c_index_def">
+        </table>
+
+        <table tableName="yyzj_c_join_sys">
+        </table>
+
+        <table tableName="yyzj_c_join_sys_copy">
+        </table>
+
+        <table tableName="yyzj_c_keyword">
+        </table>
+
+        <table tableName="yyzj_c_keyword_to_type">
+        </table>
+
+        <table tableName="yyzj_c_keyword_type">
+        </table>
+
+        <table tableName="yyzj_c_model">
+        </table>
+
+        <table tableName="yyzj_c_model_to_rule">
+        </table>
+
+        <table tableName="yyzj_c_modeling">
+        </table>
+
+        <table tableName="yyzj_c_producer_ele">
+        </table>
+
+        <table tableName="yyzj_c_producer_ele_group">
+        </table>
+
+        <table tableName="yyzj_c_producer_ele_value">
+        </table>
+
+        <table tableName="yyzj_c_rule">
+        </table>
+
+        <table tableName="yyzj_c_rule_to_type">
+        </table>
+
+        <table tableName="yyzj_c_rule_type">
+        </table>
+
+        <table tableName="yyzj_c_score_detail">
+        </table>
+
+        <table tableName="yyzj_c_score_total">
+        </table>
+
+        <table tableName="yyzj_c_score_total_data">
+        </table>
+
+        <table tableName="yyzj_c_score_total_result">
+        </table>
+
+        <table tableName="yyzj_c_sys_config">
+        </table>
+
+        <table tableName="yyzj_c_threshold">
+        </table>
+
+        <table tableName="yyzj_c_upload_audio">
+        </table>
+
+        <table tableName="yyzj_c_upload_audio_ext">
+        </table>
+
+        <table tableName="yyzj_c_user_custom">
+        </table>
+
+        <table tableName="yyzj_c_voice_type">
+        </table>
+
+        <table tableName="yyzj_d_sys_dict">
+        </table>
+
+        <table tableName="yyzj_l_alarm_log">
+        </table>
+
+        <table tableName="yyzj_l_alarm_log_copy">
+        </table>
+
+        <table tableName="yyzj_l_assign_task_log">
+        </table>
+
+        <table tableName="yyzj_l_engine_log">
+        </table>
+
+        <table tableName="yyzj_l_oper_log">
+        </table>
+
+        <table tableName="yyzj_r_base_data_xml">
+        </table>
+
+        <table tableName="yyzj_s_analyze_num">
+        </table>
+
+        <table tableName="yyzj_s_hotword_num">
+        </table>
+
+        <table tableName="yyzj_s_keyword_num">
+        </table>
+
+        <table tableName="yyzj_s_keyword_num_agent">
+        </table>
+
+        <table tableName="yyzj_s_score_agent_rule">
+        </table>
+
+        <table tableName="yyzj_s_statistics_status">
+        </table>
+
+        <table tableName="yyzj_t_base_data">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201808">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201810">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201811">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201812">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201901">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201902">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201903">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201904">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201905">
+        </table>
+
+        <table tableName="yyzj_t_base_data_201906">
+        </table>
+
+        <table tableName="yyzj_t_base_data_yyyymm">
+        </table>
+
+        <table tableName="yyzj_t_index_msg">
+        </table>
+
+        <table tableName="yyzj_t_quality_user_yyyymm">
+        </table>
+
+        <table tableName="yyzj_t_score_detail">
+        </table>
+
+        <table tableName="yyzj_t_score_detail_data">
+        </table>
+
+        <table tableName="yyzj_t_score_total">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data_20181109">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data_20181111">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data_20181112">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data_20181113">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data_20181114">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data_20181123">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data_20181203">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data_20181211">
+        </table>
+
+        <table tableName="yyzj_t_score_total_data_20181213">
+        </table>
+
+        <table tableName="yyzj_t_score_update">
+        </table>
+
+        <table tableName="yyzj_t_word_record">
+        </table>
+
+        <table tableName="yyzj_c_dict">
+        </table>
+
+    </context>
+</generatorConfiguration>
