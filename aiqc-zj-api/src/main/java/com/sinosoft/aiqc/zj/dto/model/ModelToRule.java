@@ -19,6 +19,8 @@ public class ModelToRule extends RuleTemp {
     private String ruleAttrValue;
     private JSONObject ruleAttrValueJson;
     private Double scoreValue;
+    private String fractionRule; // '分数规则：positive-正向；reverse-逆向'
+    private Double fraction; //  '分数'
 
     public String getRuleId() {
         return ruleId;
@@ -130,5 +132,21 @@ public class ModelToRule extends RuleTemp {
 
     public void setScoreValue(Double scoreValue) {
         this.scoreValue = scoreValue;
+    }
+
+    public String getFractionRule() {
+        return fractionRule;
+    }
+
+    public void setFractionRule(String fractionRule) {
+        this.fractionRule = fractionRule;
+    }
+
+    public Double getFraction() {
+        return fraction;
+    }
+
+    public void setFraction(Double fraction) {
+        this.fraction = fraction;
     }
 }
