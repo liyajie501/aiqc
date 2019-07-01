@@ -12,7 +12,7 @@ public class YyzjCScoreTotal {
      *
      * @mbg.generated
      */
-    private String totalScoreId;
+    private Integer totalScoreId;
 
     /**
      *
@@ -166,7 +166,7 @@ public class YyzjCScoreTotal {
      *
      * @mbg.generated
      */
-    public String getTotalScoreId() {
+    public Integer getTotalScoreId() {
         return totalScoreId;
     }
 
@@ -178,7 +178,7 @@ public class YyzjCScoreTotal {
      *
      * @mbg.generated
      */
-    public void setTotalScoreId(String totalScoreId) {
+    public void setTotalScoreId(Integer totalScoreId) {
         this.totalScoreId = totalScoreId;
     }
 
@@ -674,7 +674,7 @@ public class YyzjCScoreTotal {
      * @project https://github.com/itfsw/mybatis-generator-plugin
      */
     public enum Column {
-        totalScoreId("total_score_id", "totalScoreId", "CHAR", false),
+        totalScoreId("total_score_id", "totalScoreId", "INTEGER", false),
         modelId("model_id", "modelId", "CHAR", false),
         sysId("sys_id", "sysId", "CHAR", false),
         userType("user_type", "userType", "CHAR", false),

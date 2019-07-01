@@ -248,7 +248,7 @@ public class YyzjCScoreTotalExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdEqualTo(String value) {
+        public Criteria andTotalScoreIdEqualTo(Integer value) {
             addCriterion("total_score_id =", value, "totalScoreId");
             return (Criteria) this;
         }
@@ -265,7 +265,7 @@ public class YyzjCScoreTotalExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdNotEqualTo(String value) {
+        public Criteria andTotalScoreIdNotEqualTo(Integer value) {
             addCriterion("total_score_id <>", value, "totalScoreId");
             return (Criteria) this;
         }
@@ -282,7 +282,7 @@ public class YyzjCScoreTotalExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdGreaterThan(String value) {
+        public Criteria andTotalScoreIdGreaterThan(Integer value) {
             addCriterion("total_score_id >", value, "totalScoreId");
             return (Criteria) this;
         }
@@ -299,7 +299,7 @@ public class YyzjCScoreTotalExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdGreaterThanOrEqualTo(String value) {
+        public Criteria andTotalScoreIdGreaterThanOrEqualTo(Integer value) {
             addCriterion("total_score_id >=", value, "totalScoreId");
             return (Criteria) this;
         }
@@ -316,7 +316,7 @@ public class YyzjCScoreTotalExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdLessThan(String value) {
+        public Criteria andTotalScoreIdLessThan(Integer value) {
             addCriterion("total_score_id <", value, "totalScoreId");
             return (Criteria) this;
         }
@@ -333,7 +333,7 @@ public class YyzjCScoreTotalExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdLessThanOrEqualTo(String value) {
+        public Criteria andTotalScoreIdLessThanOrEqualTo(Integer value) {
             addCriterion("total_score_id <=", value, "totalScoreId");
             return (Criteria) this;
         }
@@ -350,32 +350,22 @@ public class YyzjCScoreTotalExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdLike(String value) {
-            addCriterion("total_score_id like", value, "totalScoreId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalScoreIdNotLike(String value) {
-            addCriterion("total_score_id not like", value, "totalScoreId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalScoreIdIn(List<String> values) {
+        public Criteria andTotalScoreIdIn(List<Integer> values) {
             addCriterion("total_score_id in", values, "totalScoreId");
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdNotIn(List<String> values) {
+        public Criteria andTotalScoreIdNotIn(List<Integer> values) {
             addCriterion("total_score_id not in", values, "totalScoreId");
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdBetween(String value1, String value2) {
+        public Criteria andTotalScoreIdBetween(Integer value1, Integer value2) {
             addCriterion("total_score_id between", value1, value2, "totalScoreId");
             return (Criteria) this;
         }
 
-        public Criteria andTotalScoreIdNotBetween(String value1, String value2) {
+        public Criteria andTotalScoreIdNotBetween(Integer value1, Integer value2) {
             addCriterion("total_score_id not between", value1, value2, "totalScoreId");
             return (Criteria) this;
         }

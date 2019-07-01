@@ -40,6 +40,10 @@ public class RuleController {
         return resStr;
     };
 
+    /**
+     * 添加规则
+     * @param ruleStr
+     */
     @PostMapping("/add")
     public void addRule(@NotNull @RequestBody String ruleStr){
 

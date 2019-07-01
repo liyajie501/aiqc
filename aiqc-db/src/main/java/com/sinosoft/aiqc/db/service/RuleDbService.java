@@ -2,10 +2,7 @@ package com.sinosoft.aiqc.db.service;
 
 import com.alibaba.fastjson.JSON;
 import com.sinosoft.aiqc.db.dao.*;
-import com.sinosoft.aiqc.db.domain.YyzjCProducerEleGroup;
-import com.sinosoft.aiqc.db.domain.YyzjCProducerEleValue;
-import com.sinosoft.aiqc.db.domain.YyzjCRule;
-import com.sinosoft.aiqc.db.domain.YyzjCRuleExample;
+import com.sinosoft.aiqc.db.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,24 +31,28 @@ public class RuleDbService {
 
     /**
      * 质检规则清单查询
+     *
      * @return
      */
-    public List<YyzjCRule> queryReluInfos(String reqStr){
+    public List<YyzjCRule> queryReluInfos(String reqStr) {
         YyzjCRule yyzjCRule = JSON.parseObject(reqStr, YyzjCRule.class);
         yyzjCRule.setDeleteMark("0");
         yyzjCRule.setBuiltinMark("0");
         yyzjCRule.setDictParentId("rule_label");
 
-        List<YyzjCRule> ruleInfos =  yyzjCRuleMapper.selectRuleInfos(yyzjCRule);
+        List<YyzjCRule> ruleInfos = yyzjCRuleMapper.selectRuleInfos(yyzjCRule);
 
         return ruleInfos;
-    };
+    }
+
+    ;
 
     /**
      * 查询规则总数
+     *
      * @return
      */
-    public long queryReluCount(){
+    public long queryReluCount() {
 
         YyzjCRule yyzjCRule = new YyzjCRule();
         yyzjCRule.setDeleteMark("0");
@@ -65,14 +66,15 @@ public class RuleDbService {
 
     /**
      * 添加质检规则
+     *
      * @param
      */
-    public void addRule(Map<String, String> addMap){
+    public void addRule(Map<String, String> addMap) {
 
         String ruleId = yyzjCRuleMapper.selectMaxRuleId();
-        int ruleId_int = Integer.parseInt(ruleId)+1;
+        int ruleId_int = Integer.parseInt(ruleId) + 1;
         String groupId = yyzjCProducerEleGroupMapper.selectMaxGroupId();
-        int groupId_int = Integer.parseInt(groupId)+1;
+        int groupId_int = Integer.parseInt(groupId) + 1;
 
         // 添加质检规则
         YyzjCRule yyzjCRule = JSON.parseObject(addMap.get("ruleInfo"), YyzjCRule.class);
@@ -84,14 +86,14 @@ public class RuleDbService {
 
 
         List<YyzjCProducerEleGroup> yyzjCProducerEleGroupList = JSON.parseObject(addMap.get("producerEleGroupList"), List.class);
-        for(YyzjCProducerEleGroup yyzjCProducerEleGroup: yyzjCProducerEleGroupList) {
+        for (YyzjCProducerEleGroup yyzjCProducerEleGroup : yyzjCProducerEleGroupList) {
             yyzjCProducerEleGroup.setEleGroupId(Integer.toString(groupId_int));
             yyzjCProducerEleGroup.setRuleId(Integer.toString(ruleId_int));
             int result_B = yyzjCProducerEleGroupMapper.insertSelective(yyzjCProducerEleGroup);
         }
 
         List<YyzjCProducerEleValue> producerEleValueList = JSON.parseObject(addMap.get("producerEleValueList"), List.class);
-        for(YyzjCProducerEleValue producerEleValue: producerEleValueList){
+        for (YyzjCProducerEleValue producerEleValue : producerEleValueList) {
             producerEleValue.setEleGroupId(Integer.toString(groupId_int));
             int result_C = YyzjCProducerEleValueMapper.insertSelective(producerEleValue);
         }
@@ -101,7 +103,7 @@ public class RuleDbService {
     /**
      * 修改质检规则
      */
-    public int updateRule(Map<String, String> updateMap){
+    public int updateRule(Map<String, String> updateMap) {
 
         YyzjCRule yyzjCRule = JSON.parseObject(updateMap.get("ruleInfo"), YyzjCRule.class);
 
@@ -112,4 +114,11 @@ public class RuleDbService {
         return result;
     }
 
+
+    public List<ModelToRule> selectRulesByModelId(String modelId) {
+
+        List<ModelToRule> ruleList = yyzjCRuleMapper.selectRulesByModelId(modelId);
+
+        return ruleList;
+    }
 }

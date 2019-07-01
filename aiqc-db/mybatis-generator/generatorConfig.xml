@@ -56,85 +56,85 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.sinosoft.aiqc.db.dao"
                              targetProject="src/main/java"/>
         <!--表名-->
-        <table tableName="yyzj_c_alarm">
-        </table>
+<!--        <table tableName="yyzj_c_alarm">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_alarm_to_sys">
-        </table>
+<!--        <table tableName="yyzj_c_alarm_to_sys">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_analyzer">
-        </table>
+<!--        <table tableName="yyzj_c_analyzer">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_appeal">
-        </table>
+<!--        <table tableName="yyzj_c_appeal">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_assign_task">
-        </table>
+<!--        <table tableName="yyzj_c_assign_task">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_category">
-        </table>
+<!--        <table tableName="yyzj_c_category">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_engine">
-        </table>
+<!--        <table tableName="yyzj_c_engine">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_engine_to_sys">
-        </table>
+<!--        <table tableName="yyzj_c_engine_to_sys">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_ignore_word">
-        </table>
+<!--        <table tableName="yyzj_c_ignore_word">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_index_def">
-        </table>
+<!--        <table tableName="yyzj_c_index_def">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_join_sys">
-        </table>
+<!--        <table tableName="yyzj_c_join_sys">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_join_sys_copy">
-        </table>
+<!--        <table tableName="yyzj_c_join_sys_copy">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_keyword">
-        </table>
+<!--        <table tableName="yyzj_c_keyword">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_keyword_to_type">
-        </table>
+<!--        <table tableName="yyzj_c_keyword_to_type">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_keyword_type">
-        </table>
+<!--        <table tableName="yyzj_c_keyword_type">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_model">
-        </table>
+<!--        <table tableName="yyzj_c_model">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_model_to_rule">
-        </table>
+<!--        <table tableName="yyzj_c_model_to_rule">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_modeling">
-        </table>
+<!--        <table tableName="yyzj_c_modeling">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_producer_ele">
-        </table>
+<!--        <table tableName="yyzj_c_producer_ele">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_producer_ele_group">
-        </table>
+<!--        <table tableName="yyzj_c_producer_ele_group">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_producer_ele_value">
-        </table>
+<!--        <table tableName="yyzj_c_producer_ele_value">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_rule">
-        </table>
+<!--        <table tableName="yyzj_c_rule">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_rule_to_type">
-        </table>
+<!--        <table tableName="yyzj_c_rule_to_type">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_rule_type">
-        </table>
+<!--        <table tableName="yyzj_c_rule_type">-->
+<!--        </table>-->
 
-        <table tableName="yyzj_c_score_detail">
-        </table>
+<!--        <table tableName="yyzj_c_score_detail">-->
+<!--        </table>-->
 
         <table tableName="yyzj_c_score_total">
         </table>
 
-        <table tableName="yyzj_c_score_total_data">
+        <!--<table tableName="yyzj_c_score_total_data">
         </table>
 
         <table tableName="yyzj_c_score_total_result">
@@ -200,39 +200,6 @@
         <table tableName="yyzj_t_base_data">
         </table>
 
-        <table tableName="yyzj_t_base_data_201808">
-        </table>
-
-        <table tableName="yyzj_t_base_data_201810">
-        </table>
-
-        <table tableName="yyzj_t_base_data_201811">
-        </table>
-
-        <table tableName="yyzj_t_base_data_201812">
-        </table>
-
-        <table tableName="yyzj_t_base_data_201901">
-        </table>
-
-        <table tableName="yyzj_t_base_data_201902">
-        </table>
-
-        <table tableName="yyzj_t_base_data_201903">
-        </table>
-
-        <table tableName="yyzj_t_base_data_201904">
-        </table>
-
-        <table tableName="yyzj_t_base_data_201905">
-        </table>
-
-        <table tableName="yyzj_t_base_data_201906">
-        </table>
-
-        <table tableName="yyzj_t_base_data_yyyymm">
-        </table>
-
         <table tableName="yyzj_t_index_msg">
         </table>
 
@@ -251,33 +218,6 @@
         <table tableName="yyzj_t_score_total_data">
         </table>
 
-        <table tableName="yyzj_t_score_total_data_20181109">
-        </table>
-
-        <table tableName="yyzj_t_score_total_data_20181111">
-        </table>
-
-        <table tableName="yyzj_t_score_total_data_20181112">
-        </table>
-
-        <table tableName="yyzj_t_score_total_data_20181113">
-        </table>
-
-        <table tableName="yyzj_t_score_total_data_20181114">
-        </table>
-
-        <table tableName="yyzj_t_score_total_data_20181123">
-        </table>
-
-        <table tableName="yyzj_t_score_total_data_20181203">
-        </table>
-
-        <table tableName="yyzj_t_score_total_data_20181211">
-        </table>
-
-        <table tableName="yyzj_t_score_total_data_20181213">
-        </table>
-
         <table tableName="yyzj_t_score_update">
         </table>
 
@@ -285,7 +225,7 @@
         </table>
 
         <table tableName="yyzj_c_dict">
-        </table>
+        </table>-->
 
     </context>
 </generatorConfiguration>
