@@ -1,16 +1,9 @@
 package com.sinosoft.engine.analyze.cassandra.java;
 
-import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.ColumnDefinitions;
-import com.datastax.driver.core.HostDistance;
-import com.datastax.driver.core.PoolingOptions;
-import com.datastax.driver.core.ResultSet;
-import com.datastax.driver.core.Row;
-import com.datastax.driver.core.Session;
+import com.datastax.driver.core.*;
+import org.apache.commons.lang.StringUtils;
 
 import java.text.SimpleDateFormat;
-
-import org.apache.commons.lang.StringUtils;
 
 
 public class CassandraTest {

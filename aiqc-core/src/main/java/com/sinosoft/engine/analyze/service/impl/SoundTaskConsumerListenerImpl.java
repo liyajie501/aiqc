@@ -1,19 +1,34 @@
 /*    */ package com.sinosoft.engine.analyze.service.impl;
 /*    */ 
 /*    */ import com.huayunworld.znyyzj.engine.analyze.cassandra.model.BaseData;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.model.AnalyzeResult;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.model.MessageSound;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.service.CacheService;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.service.IndexFileHandleService;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.service.mq.SoundTaskConsumerListener;
-/*    */ import java.io.Serializable;
-/*    */ import java.util.List;
-/*    */ import java.util.concurrent.BlockingQueue;
-/*    */ import java.util.concurrent.LinkedBlockingQueue;
-/*    */ import org.apache.commons.lang.StringUtils;
-/*    */ import org.apache.log4j.Logger;
-/*    */ import org.springframework.beans.factory.annotation.Autowired;
-/*    */ import org.springframework.stereotype.Component;
+import com.huayunworld.znyyzj.engine.analyze.model.AnalyzeResult;
+import com.huayunworld.znyyzj.engine.analyze.model.MessageSound;
+import com.huayunworld.znyyzj.engine.analyze.service.CacheService;
+import com.huayunworld.znyyzj.engine.analyze.service.IndexFileHandleService;
+import com.huayunworld.znyyzj.engine.analyze.service.mq.SoundTaskConsumerListener;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
 /*    */ 
 /*    */ @Component("soundTaskConsumerListener")
 /*    */ public class SoundTaskConsumerListenerImpl

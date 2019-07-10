@@ -1,11 +1,18 @@
 /*    */ package com.sinosoft.engine.analyze.plugin.result;
 /*    */ 
-/*    */ import java.util.ArrayList;
-/*    */ import java.util.Collection;
-/*    */ import java.util.Iterator;
-/*    */ import java.util.List;
 /*    */ import net.sf.json.JSONArray;
-/*    */ import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.StringUtils;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
 /*    */ 
 /*    */ 
 /*    */ 

@@ -1,6 +1,7 @@
 package com.sinosoft.engine.analyze.service;
 
 import com.huayunworld.znyyzj.engine.analyze.model.ScoreResult;
+
 import java.util.List;
 
 public interface ScoreResultService {

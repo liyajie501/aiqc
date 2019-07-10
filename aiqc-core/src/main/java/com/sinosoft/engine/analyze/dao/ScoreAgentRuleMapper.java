@@ -1,6 +1,7 @@
 package com.sinosoft.engine.analyze.dao;
 
 import com.huayunworld.znyyzj.engine.analyze.model.ScoreAgentRule;
+
 import java.util.List;
 
 public interface ScoreAgentRuleMapper {

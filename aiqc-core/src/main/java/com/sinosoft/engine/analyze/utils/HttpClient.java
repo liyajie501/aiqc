@@ -1,28 +1,48 @@
 /*     */ package com.sinosoft.engine.analyze.utils;
 /*     */ 
 /*     */ import com.alibaba.druid.util.StringUtils;
-/*     */ import com.github.pagehelper.util.StringUtil;
-/*     */ import java.io.DataInputStream;
-/*     */ import java.io.DataOutputStream;
-/*     */ import java.io.FileOutputStream;
-/*     */ import java.io.UnsupportedEncodingException;
-/*     */ import java.net.URL;
-/*     */ import java.net.URLDecoder;
-/*     */ import java.net.URLEncoder;
-/*     */ import java.security.SecureRandom;
-/*     */ import javax.net.ssl.HostnameVerifier;
-/*     */ import javax.net.ssl.HttpsURLConnection;
-/*     */ import javax.net.ssl.SSLContext;
-/*     */ import javax.net.ssl.SSLSession;
-/*     */ import javax.net.ssl.TrustManager;
-/*     */ import org.apache.commons.io.IOUtils;
-/*     */ import org.apache.http.HttpResponse;
-/*     */ import org.apache.http.client.methods.HttpGet;
-/*     */ import org.apache.http.client.methods.HttpPost;
-/*     */ import org.apache.http.entity.StringEntity;
-/*     */ import org.apache.http.impl.client.DefaultHttpClient;
-/*     */ import org.apache.http.util.EntityUtils;
-/*     */ import org.apache.log4j.Logger;
+import com.github.pagehelper.util.StringUtil;
+import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
+
+import javax.net.ssl.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.security.SecureRandom;
+
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

@@ -1,19 +1,29 @@
 /*     */ package com.sinosoft.engine.analyze.plugin;
 /*     */ 
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.AnalyzeResource;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.EleGroupResult;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.Emotion;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.MarkEmotion;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.ProducerEleValueExt;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.RuleCore;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.service.AnalyzeService;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.service.XmlResolverJsoup;
-/*     */ import java.io.IOException;
-/*     */ import java.util.List;
-/*     */ import org.apache.log4j.Logger;
-/*     */ import org.jsoup.nodes.Document;
-/*     */ import org.jsoup.nodes.Element;
-/*     */ import org.jsoup.select.Elements;
+/*     */ import com.huayunworld.znyyzj.engine.analyze.model.*;
+import com.huayunworld.znyyzj.engine.analyze.service.AnalyzeService;
+import com.huayunworld.znyyzj.engine.analyze.service.XmlResolverJsoup;
+import org.apache.log4j.Logger;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.util.List;
+
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

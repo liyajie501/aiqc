@@ -2,9 +2,10 @@ package com.sinosoft.engine.elasticsearch.service;
 
 import com.github.pagehelper.PageInfo;
 import com.huayunworld.znyyzj.engine.elasticsearch.doc.BaseData;
+import org.springframework.data.domain.Pageable;
+
 import java.util.List;
 import java.util.Map;
-import org.springframework.data.domain.Pageable;
 
 public interface ESBaseDataSearchService {
   List<BaseData> getByBaseData(BaseData paramBaseData, Pageable paramPageable);

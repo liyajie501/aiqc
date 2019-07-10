@@ -1,11 +1,17 @@
 /*     */ package com.sinosoft.engine.analyze.service;
 /*     */ 
 /*     */ import com.huayunworld.znyyzj.engine.analyze.cassandra.repository.ScoreTotalDataRepository;
-/*     */ import org.apache.log4j.Logger;
-/*     */ import org.springframework.beans.factory.annotation.Autowired;
-/*     */ import org.springframework.context.support.ClassPathXmlApplicationContext;
-/*     */ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-/*     */ import org.springframework.stereotype.Service;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.stereotype.Service;
+
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

@@ -1,19 +1,15 @@
 package com.sinosoft.engine.core.feature.orm.mybatis;
 
-import java.util.Properties;
-
 import org.apache.ibatis.executor.resultset.FastResultSetHandler;
-import org.apache.ibatis.plugin.Interceptor;
-import org.apache.ibatis.plugin.Intercepts;
-import org.apache.ibatis.plugin.Invocation;
-import org.apache.ibatis.plugin.Plugin;
-import org.apache.ibatis.plugin.Signature;
+import org.apache.ibatis.plugin.*;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.factory.DefaultObjectFactory;
 import org.apache.ibatis.reflection.factory.ObjectFactory;
 import org.apache.ibatis.reflection.wrapper.DefaultObjectWrapperFactory;
 import org.apache.ibatis.reflection.wrapper.ObjectWrapperFactory;
 import org.apache.ibatis.session.RowBounds;
+
+import java.util.Properties;
 
 
 @Intercepts({@Signature(type = org.apache.ibatis.executor.resultset.ResultSetHandler.class, method = "handleResultSets", args = {java.sql.Statement.class})})

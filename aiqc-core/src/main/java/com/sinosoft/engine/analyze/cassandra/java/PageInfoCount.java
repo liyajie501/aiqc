@@ -1,7 +1,9 @@
 /*    */ package com.sinosoft.engine.analyze.cassandra.java;
 /*    */ 
 /*    */ import org.springframework.data.cassandra.mapping.PrimaryKey;
-/*    */ import org.springframework.data.cassandra.mapping.Table;
+import org.springframework.data.cassandra.mapping.Table;
+
+/*    */
 /*    */ 
 /*    */ @Table("PageInfoCount")
 /*    */ public class PageInfoCount

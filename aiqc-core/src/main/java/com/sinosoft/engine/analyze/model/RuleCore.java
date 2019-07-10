@@ -1,7 +1,9 @@
 /*    */ package com.sinosoft.engine.analyze.model;
 /*    */ 
 /*    */ import java.util.List;
-/*    */ import java.util.Map;
+import java.util.Map;
+
+/*    */
 /*    */ 
 /*    */ 
 /*    */ 

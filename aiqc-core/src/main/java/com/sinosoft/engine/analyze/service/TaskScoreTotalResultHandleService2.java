@@ -1,15 +1,26 @@
 /*    */ package com.sinosoft.engine.analyze.service;
 /*    */ 
 /*    */ import com.huayunworld.znyyzj.engine.analyze.constant.BaseInfo;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.model.BaseData;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.model.MessageSound;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.model.ScoreResult;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.model.ScoreTotal;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.utils.CommonTools;
-/*    */ import java.util.Date;
-/*    */ import java.util.List;
-/*    */ import net.sf.json.JSONObject;
-/*    */ import org.apache.log4j.Logger;
+import com.huayunworld.znyyzj.engine.analyze.model.BaseData;
+import com.huayunworld.znyyzj.engine.analyze.model.MessageSound;
+import com.huayunworld.znyyzj.engine.analyze.model.ScoreResult;
+import com.huayunworld.znyyzj.engine.analyze.model.ScoreTotal;
+import com.huayunworld.znyyzj.engine.analyze.utils.CommonTools;
+import net.sf.json.JSONObject;
+import org.apache.log4j.Logger;
+
+import java.util.Date;
+import java.util.List;
+
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
 /*    */ 
 /*    */ 
 /*    */ 

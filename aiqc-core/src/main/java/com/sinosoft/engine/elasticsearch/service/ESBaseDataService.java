@@ -1,6 +1,7 @@
 package com.sinosoft.engine.elasticsearch.service;
 
 import com.huayunworld.znyyzj.engine.elasticsearch.doc.BaseData;
+
 import java.util.List;
 
 public interface ESBaseDataService {

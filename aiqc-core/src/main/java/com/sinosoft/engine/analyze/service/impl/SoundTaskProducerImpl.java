@@ -1,10 +1,16 @@
 /*    */ package com.sinosoft.engine.analyze.service.impl;
 /*    */ 
 /*    */ import com.huayunworld.znyyzj.engine.analyze.service.mq.SoundTaskProducer;
-/*    */ import java.io.Serializable;
-/*    */ import org.apache.log4j.Logger;
-/*    */ import org.springframework.beans.factory.annotation.Autowired;
-/*    */ import org.springframework.stereotype.Component;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+
+/*    */
+/*    */
+/*    */
+/*    */
 /*    */ 
 /*    */ @Component
 /*    */ public class SoundTaskProducerImpl

@@ -1,6 +1,7 @@
 package com.sinosoft.engine.analyze.dao;
 
 import com.sinosoft.engine.analyze.model.Alarm;
+
 import java.util.List;
 
 public interface AlarmMapper {

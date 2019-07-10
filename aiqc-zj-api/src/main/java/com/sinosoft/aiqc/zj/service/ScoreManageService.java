@@ -10,7 +10,6 @@ import com.sinosoft.aiqc.zj.dto.Score.ScoreTotal;
 import com.sinosoft.aiqc.zj.utils.HttpClient;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,8 +24,8 @@ public class ScoreManageService {
     @Autowired
     private ScoreTotalDbService scoreTotalDbService;
 
-    @Value("${yyzj.analyze.web.path}")
-    private String analyzeWebPath;
+    // @Value("${yyzj.analyze.web.path}")
+    private String analyzeWebPath = "http://localhost:8080/analyze/";
 
 
     public int insertScoreInfo(ScoreTotal scoreTotal) {

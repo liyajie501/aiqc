@@ -1,7 +1,8 @@
 /*    */ package com.sinosoft.engine.analyze.model;
 /*    */ 
-/*    */ import com.huayunworld.znyyzj.engine.analyze.cassandra.model.ScoreTotalData;
 /*    */ import org.apache.commons.beanutils.PropertyUtils;
+
+/*    */
 /*    */ 
 /*    */ public class ScoreTotalData extends ScoreTotalData {
 /*    */   private String tableNameSuffix;

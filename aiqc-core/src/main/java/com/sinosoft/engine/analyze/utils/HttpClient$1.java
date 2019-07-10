@@ -1,7 +1,7 @@
 /*     */ package com.sinosoft.engine.analyze.utils;
 /*     */ 
-/*     */ import javax.net.ssl.HostnameVerifier;
-/*     */ import javax.net.ssl.SSLSession;
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

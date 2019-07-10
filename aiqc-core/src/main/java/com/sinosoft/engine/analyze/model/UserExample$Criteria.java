@@ -1,7 +1,7 @@
 /*     */ package com.sinosoft.engine.analyze.model;
 /*     */ 
-/*     */ import java.util.Date;
-/*     */ import java.util.List;
+/*     */
+/*     */
 /*     */ 
 /*     */ public class Criteria extends UserExample.GeneratedCriteria {}
 

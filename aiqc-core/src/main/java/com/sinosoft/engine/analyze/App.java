@@ -1,11 +1,18 @@
          package com.sinosoft.engine.analyze;
 /*    */
 /*    */ import com.sinosoft.engine.analyze.cassandra.java.PageInfoCassandra;
-/*    */ import com.sinosoft.engine.analyze.cassandra.model.ScoreTotalData;
-/*    */ import java.util.List;
-/*    */ import net.sf.json.JSONObject;
-/*    */ import org.springframework.context.support.ClassPathXmlApplicationContext;
-/*    */ import org.springframework.data.cassandra.core.CassandraOperations;
+import com.sinosoft.engine.analyze.cassandra.model.ScoreTotalData;
+import net.sf.json.JSONObject;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.data.cassandra.core.CassandraOperations;
+
+import java.util.List;
+
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
 /*    */
 /*    */
 /*    */

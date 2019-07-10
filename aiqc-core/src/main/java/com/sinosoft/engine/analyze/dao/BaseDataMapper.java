@@ -2,6 +2,7 @@ package com.sinosoft.engine.analyze.dao;
 
 import com.huayunworld.znyyzj.engine.analyze.constant.BaseInfo;
 import com.huayunworld.znyyzj.engine.analyze.model.BaseData;
+
 import java.util.List;
 
 public interface BaseDataMapper {

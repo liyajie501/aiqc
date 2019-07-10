@@ -1,14 +1,24 @@
 /*    */ package com.sinosoft.engine.analyze.service.impl;
 /*    */ 
 /*    */ import com.huayunworld.znyyzj.engine.analyze.dao.UserMapper;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.model.User;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.model.UserExample;
-/*    */ import com.huayunworld.znyyzj.engine.analyze.service.UserService;
-/*    */ import com.huayunworld.znyyzj.engine.core.generic.GenericDao;
-/*    */ import com.huayunworld.znyyzj.engine.core.generic.GenericServiceImpl;
-/*    */ import java.util.List;
-/*    */ import javax.annotation.Resource;
-/*    */ import org.springframework.stereotype.Service;
+import com.huayunworld.znyyzj.engine.analyze.model.User;
+import com.huayunworld.znyyzj.engine.analyze.model.UserExample;
+import com.huayunworld.znyyzj.engine.analyze.service.UserService;
+import com.huayunworld.znyyzj.engine.core.generic.GenericDao;
+import com.huayunworld.znyyzj.engine.core.generic.GenericServiceImpl;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
 /*    */ 
 /*    */ 
 /*    */ 

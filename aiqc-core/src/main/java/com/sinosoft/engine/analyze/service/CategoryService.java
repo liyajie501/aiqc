@@ -1,6 +1,7 @@
 package com.sinosoft.engine.analyze.service;
 
 import com.huayunworld.znyyzj.engine.analyze.model.Category;
+
 import java.util.List;
 
 public interface CategoryService {

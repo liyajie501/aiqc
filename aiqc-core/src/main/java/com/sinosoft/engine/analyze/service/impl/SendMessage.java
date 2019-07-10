@@ -1,9 +1,14 @@
 /*    */ package com.sinosoft.engine.analyze.service.impl;
 /*    */ 
-/*    */ import java.io.Serializable;
 /*    */ import org.springframework.beans.factory.annotation.Autowired;
-/*    */ import org.springframework.data.redis.core.RedisTemplate;
-/*    */ import org.springframework.stereotype.Component;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+
+/*    */
+/*    */
+/*    */
 /*    */ 
 /*    */ @Component
 /*    */ public class SendMessage

@@ -6,33 +6,16 @@ import com.sinosoft.engine.analyze.cassandra.model.BaseData;
 import com.sinosoft.engine.analyze.cassandra.model.ScoreDetailData;
 import com.sinosoft.engine.analyze.cassandra.model.ScoreTotalData;
 import com.sinosoft.engine.analyze.constant.BaseInfo;
-import com.sinosoft.engine.analyze.model.AnalyzeResource;
-import com.sinosoft.engine.analyze.model.AnalyzeResult;
-import com.sinosoft.engine.analyze.model.Analyzer;
-import com.sinosoft.engine.analyze.model.Category;
-import com.sinosoft.engine.analyze.model.ProducerEleValueExt;
-import com.sinosoft.engine.analyze.model.Rule;
-import com.sinosoft.engine.analyze.model.RuleAndScoreDetail;
-import com.sinosoft.engine.analyze.model.RuleCore;
-import com.sinosoft.engine.analyze.model.ScoreTotal;
-import com.sinosoft.engine.analyze.model.SqlResultMap001;
-import com.sinosoft.engine.analyze.model.Task;
+import com.sinosoft.engine.analyze.model.*;
 import com.sinosoft.engine.analyze.utils.CommonTools;
 import com.sinosoft.engine.analyze.utils.DateUtil;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.BlockingQueue;
-
 import net.sf.json.JSONObject;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+
+import java.util.*;
+import java.util.concurrent.BlockingQueue;
 
 
 public class TaskHandleAnalyzeService {

@@ -1,8 +1,11 @@
 /*     */ package com.sinosoft.engine.analyze.model;
 /*     */ 
 /*     */ import java.util.ArrayList;
-/*     */ import java.util.Date;
-/*     */ import java.util.List;
+import java.util.Date;
+import java.util.List;
+
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

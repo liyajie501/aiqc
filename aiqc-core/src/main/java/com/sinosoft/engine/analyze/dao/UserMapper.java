@@ -4,8 +4,9 @@ import com.github.pagehelper.Page;
 import com.huayunworld.znyyzj.engine.analyze.model.User;
 import com.huayunworld.znyyzj.engine.analyze.model.UserExample;
 import com.huayunworld.znyyzj.engine.core.generic.GenericDao;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UserMapper extends GenericDao<User, Long> {
   int countByExample(UserExample paramUserExample);

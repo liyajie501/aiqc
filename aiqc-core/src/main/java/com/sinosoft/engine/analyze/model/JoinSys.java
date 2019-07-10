@@ -1,8 +1,11 @@
 /*     */ package com.sinosoft.engine.analyze.model;
 /*     */ 
 /*     */ import net.sf.json.JSONObject;
-/*     */ import org.apache.commons.lang.builder.CompareToBuilder;
-/*     */ import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.CompareToBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

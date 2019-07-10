@@ -1,24 +1,40 @@
 /*     */ package com.sinosoft.engine.task.service.impl;
 /*     */ 
 /*     */ import com.huayunworld.znyyzj.engine.analyze.constant.BaseInfo;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.RuleAndScoreDetail;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.ScoreAgentRule;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.ScoreTotal;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.service.CacheService;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.utils.CommonTools;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.utils.DateUtil;
-/*     */ import com.huayunworld.znyyzj.engine.task.service.TaskService;
-/*     */ import java.text.SimpleDateFormat;
-/*     */ import java.util.ArrayList;
-/*     */ import java.util.Calendar;
-/*     */ import java.util.Date;
-/*     */ import java.util.Iterator;
-/*     */ import java.util.List;
-/*     */ import net.sf.json.JSONObject;
-/*     */ import org.apache.log4j.Logger;
-/*     */ import org.springframework.beans.factory.annotation.Autowired;
-/*     */ import org.springframework.stereotype.Service;
+import com.huayunworld.znyyzj.engine.analyze.model.RuleAndScoreDetail;
+import com.huayunworld.znyyzj.engine.analyze.model.ScoreAgentRule;
+import com.huayunworld.znyyzj.engine.analyze.model.ScoreTotal;
+import com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData;
+import com.huayunworld.znyyzj.engine.analyze.service.CacheService;
+import com.huayunworld.znyyzj.engine.analyze.utils.CommonTools;
+import com.huayunworld.znyyzj.engine.analyze.utils.DateUtil;
+import com.huayunworld.znyyzj.engine.task.service.TaskService;
+import net.sf.json.JSONObject;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

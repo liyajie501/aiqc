@@ -8,6 +8,9 @@ import com.sinosoft.engine.analyze.model.AnalyzeResource;
 import com.sinosoft.engine.analyze.model.Task;
 import com.sinosoft.engine.analyze.utils.CommonTools;
 import com.sinosoft.engine.analyze.utils.ListIterable;
+import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,10 +21,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-
-import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
 
 
 public class TaskHandleSaveService {

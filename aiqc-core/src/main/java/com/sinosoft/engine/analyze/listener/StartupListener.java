@@ -1,12 +1,18 @@
 /*    */ package com.sinosoft.engine.analyze.listener;
 /*    */ 
 /*    */ import com.huayunworld.znyyzj.engine.analyze.service.MainService;
-/*    */ import org.apache.log4j.Logger;
-/*    */ import org.springframework.beans.factory.annotation.Autowired;
-/*    */ import org.springframework.context.ApplicationEvent;
-/*    */ import org.springframework.context.ApplicationListener;
-/*    */ import org.springframework.context.event.ContextRefreshedEvent;
-/*    */ import org.springframework.stereotype.Service;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Service;
+
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
 /*    */ 
 /*    */ @Service
 /*    */ public class StartupListener

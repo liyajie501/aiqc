@@ -1,36 +1,63 @@
 /*     */ package com.sinosoft.engine.elasticsearch.serviceImpl;
 /*     */ 
 /*     */ import com.alibaba.druid.util.StringUtils;
-/*     */ import com.alibaba.fastjson.JSONObject;
-/*     */ import com.github.pagehelper.PageInfo;
-/*     */ import com.huayunworld.znyyzj.engine.elasticsearch.common.Constant;
-/*     */ import com.huayunworld.znyyzj.engine.elasticsearch.doc.BaseData;
-/*     */ import com.huayunworld.znyyzj.engine.elasticsearch.service.ESBaseDataSearchService;
-/*     */ import java.util.ArrayList;
-/*     */ import java.util.HashMap;
-/*     */ import java.util.Iterator;
-/*     */ import java.util.LinkedList;
-/*     */ import java.util.List;
-/*     */ import java.util.Map;
-/*     */ import net.sf.json.JSONArray;
-/*     */ import org.apache.commons.beanutils.BeanUtils;
-/*     */ import org.apache.log4j.Logger;
-/*     */ import org.elasticsearch.action.search.SearchRequestBuilder;
-/*     */ import org.elasticsearch.action.search.SearchResponse;
-/*     */ import org.elasticsearch.action.search.SearchType;
-/*     */ import org.elasticsearch.index.query.BoolQueryBuilder;
-/*     */ import org.elasticsearch.index.query.QueryBuilders;
-/*     */ import org.elasticsearch.index.query.RangeQueryBuilder;
-/*     */ import org.elasticsearch.search.SearchHit;
-/*     */ import org.elasticsearch.search.aggregations.AggregationBuilders;
-/*     */ import org.elasticsearch.search.aggregations.bucket.terms.Terms;
-/*     */ import org.elasticsearch.search.sort.SortOrder;
-/*     */ import org.springframework.beans.factory.annotation.Autowired;
-/*     */ import org.springframework.data.domain.Pageable;
-/*     */ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
-/*     */ import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
-/*     */ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
-/*     */ import org.springframework.stereotype.Service;
+import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageInfo;
+import com.huayunworld.znyyzj.engine.elasticsearch.common.Constant;
+import com.huayunworld.znyyzj.engine.elasticsearch.doc.BaseData;
+import com.huayunworld.znyyzj.engine.elasticsearch.service.ESBaseDataSearchService;
+import net.sf.json.JSONArray;
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.log4j.Logger;
+import org.elasticsearch.action.search.SearchRequestBuilder;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.search.SearchType;
+import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.RangeQueryBuilder;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.aggregations.AggregationBuilders;
+import org.elasticsearch.search.aggregations.bucket.terms.Terms;
+import org.elasticsearch.search.sort.SortOrder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
+import org.springframework.stereotype.Service;
+
+import java.util.*;
+
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

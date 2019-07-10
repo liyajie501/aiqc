@@ -1,8 +1,12 @@
 /*     */ package com.sinosoft.engine.analyze.service;
 /*     */ 
 /*     */ import com.huayunworld.znyyzj.engine.analyze.model.JoinSys;
-/*     */ import java.util.UUID;
-/*     */ import org.apache.log4j.Logger;
+import org.apache.log4j.Logger;
+
+import java.util.UUID;
+
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

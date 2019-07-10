@@ -1,7 +1,10 @@
 /*    */ package com.sinosoft.engine.core.util;
 /*    */ 
-/*    */ import java.util.UUID;
 /*    */ import org.apache.commons.codec.digest.DigestUtils;
+
+import java.util.UUID;
+
+/*    */
 /*    */ 
 /*    */ 
 /*    */ 

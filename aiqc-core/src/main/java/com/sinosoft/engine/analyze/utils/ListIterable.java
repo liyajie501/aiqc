@@ -1,7 +1,9 @@
 /*    */ package com.sinosoft.engine.analyze.utils;
 /*    */ 
 /*    */ import java.util.Iterator;
-/*    */ import java.util.List;
+import java.util.List;
+
+/*    */
 /*    */ 
 /*    */ public class ListIterable<T> extends Object implements Iterable<T> {
 /*    */   List<T> list;

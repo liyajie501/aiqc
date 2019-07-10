@@ -1,11 +1,18 @@
 /*    */ package com.sinosoft.engine.analyze.service;
 /*    */ 
-/*    */ import java.util.concurrent.BlockingQueue;
-/*    */ import java.util.concurrent.LinkedBlockingQueue;
 /*    */ import org.apache.log4j.Logger;
-/*    */ import org.springframework.beans.factory.annotation.Autowired;
-/*    */ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-/*    */ import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.stereotype.Service;
+
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
+/*    */
+/*    */
+/*    */
+/*    */
+/*    */
 /*    */ 
 /*    */ 
 /*    */ 

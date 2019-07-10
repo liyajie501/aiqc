@@ -1,21 +1,34 @@
 /*     */ package com.sinosoft.engine.analyze.plugin;
 /*     */ 
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.AnalyzeResource;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.EleGroupResult;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.MarkText;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.ProducerEleValueExt;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.model.RuleCore;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.service.AnalyzeService;
-/*     */ import com.huayunworld.znyyzj.engine.analyze.service.XmlResolverJsoup;
-/*     */ import java.util.HashSet;
-/*     */ import java.util.List;
-/*     */ import java.util.Set;
-/*     */ import net.sf.json.JSONArray;
-/*     */ import org.apache.commons.lang.StringUtils;
-/*     */ import org.apache.log4j.Logger;
-/*     */ import org.jsoup.nodes.Document;
-/*     */ import org.jsoup.nodes.Element;
-/*     */ import org.jsoup.select.Elements;
+/*     */ import com.huayunworld.znyyzj.engine.analyze.model.*;
+import com.huayunworld.znyyzj.engine.analyze.service.AnalyzeService;
+import com.huayunworld.znyyzj.engine.analyze.service.XmlResolverJsoup;
+import net.sf.json.JSONArray;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 

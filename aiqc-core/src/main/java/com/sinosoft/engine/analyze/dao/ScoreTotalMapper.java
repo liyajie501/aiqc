@@ -1,6 +1,7 @@
 package com.sinosoft.engine.analyze.dao;
 
 import com.sinosoft.engine.analyze.model.ScoreTotal;
+
 import java.util.List;
 
 public interface ScoreTotalMapper {
