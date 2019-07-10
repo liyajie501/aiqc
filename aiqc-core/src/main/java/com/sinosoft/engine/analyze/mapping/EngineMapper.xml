@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.EngineMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.Engine">
+    <id column="engine_id" jdbcType="CHAR" property="engineId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="engine_ip" jdbcType="VARCHAR" property="engineIp" />
+    <result column="engine_port" jdbcType="VARCHAR" property="enginePort" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    engine_id, type, engine_ip, engine_port, version
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_c_engine
+    where engine_id = #{engineId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_c_engine
+    where engine_id = #{engineId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Engine">
+    insert into yyzj_c_engine (engine_id, type, engine_ip, 
+      engine_port, version)
+    values (#{engineId,jdbcType=CHAR}, #{type,jdbcType=VARCHAR}, #{engineIp,jdbcType=VARCHAR}, 
+      #{enginePort,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Engine">
+    insert into yyzj_c_engine
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="engineId != null">
+        engine_id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="engineIp != null">
+        engine_ip,
+      </if>
+      <if test="enginePort != null">
+        engine_port,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="engineId != null">
+        #{engineId,jdbcType=CHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="engineIp != null">
+        #{engineIp,jdbcType=VARCHAR},
+      </if>
+      <if test="enginePort != null">
+        #{enginePort,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Engine">
+    update yyzj_c_engine
+    <set>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="engineIp != null">
+        engine_ip = #{engineIp,jdbcType=VARCHAR},
+      </if>
+      <if test="enginePort != null">
+        engine_port = #{enginePort,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where engine_id = #{engineId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Engine">
+    update yyzj_c_engine
+    set type = #{type,jdbcType=VARCHAR},
+      engine_ip = #{engineIp,jdbcType=VARCHAR},
+      engine_port = #{enginePort,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR}
+    where engine_id = #{engineId,jdbcType=CHAR}
+  </update>
+</mapper>

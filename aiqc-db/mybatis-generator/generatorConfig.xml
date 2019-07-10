@@ -56,85 +56,85 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.sinosoft.aiqc.db.dao"
                              targetProject="src/main/java"/>
         <!--表名-->
-<!--        <table tableName="yyzj_c_alarm">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_alarm">
+        </table>
 
-<!--        <table tableName="yyzj_c_alarm_to_sys">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_alarm_to_sys">
+        </table>
 
-<!--        <table tableName="yyzj_c_analyzer">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_analyzer">
+        </table>
 
-<!--        <table tableName="yyzj_c_appeal">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_appeal">
+        </table>
 
-<!--        <table tableName="yyzj_c_assign_task">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_assign_task">
+        </table>
 
-<!--        <table tableName="yyzj_c_category">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_category">
+        </table>
 
-<!--        <table tableName="yyzj_c_engine">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_engine">
+        </table>
 
-<!--        <table tableName="yyzj_c_engine_to_sys">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_engine_to_sys">
+        </table>
 
-<!--        <table tableName="yyzj_c_ignore_word">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_ignore_word">
+        </table>
 
-<!--        <table tableName="yyzj_c_index_def">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_index_def">
+        </table>
 
-<!--        <table tableName="yyzj_c_join_sys">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_join_sys">
+        </table>
 
-<!--        <table tableName="yyzj_c_join_sys_copy">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_join_sys_copy">
+        </table>
 
-<!--        <table tableName="yyzj_c_keyword">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_keyword">
+        </table>
 
-<!--        <table tableName="yyzj_c_keyword_to_type">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_keyword_to_type">
+        </table>
 
-<!--        <table tableName="yyzj_c_keyword_type">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_keyword_type">
+        </table>
 
-<!--        <table tableName="yyzj_c_model">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_model">
+        </table>
 
-<!--        <table tableName="yyzj_c_model_to_rule">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_model_to_rule">
+        </table>
 
-<!--        <table tableName="yyzj_c_modeling">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_modeling">
+        </table>
 
-<!--        <table tableName="yyzj_c_producer_ele">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_producer_ele">
+        </table>
 
-<!--        <table tableName="yyzj_c_producer_ele_group">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_producer_ele_group">
+        </table>
 
-<!--        <table tableName="yyzj_c_producer_ele_value">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_producer_ele_value">
+        </table>
 
-<!--        <table tableName="yyzj_c_rule">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_rule">
+        </table>
 
-<!--        <table tableName="yyzj_c_rule_to_type">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_rule_to_type">
+        </table>
 
-<!--        <table tableName="yyzj_c_rule_type">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_rule_type">
+        </table>
 
-<!--        <table tableName="yyzj_c_score_detail">-->
-<!--        </table>-->
+        <table tableName="yyzj_c_score_detail">
+        </table>
 
         <table tableName="yyzj_c_score_total">
         </table>
 
-        <!--<table tableName="yyzj_c_score_total_data">
+        <table tableName="yyzj_c_score_total_data">
         </table>
 
         <table tableName="yyzj_c_score_total_result">
@@ -225,7 +225,7 @@
         </table>
 
         <table tableName="yyzj_c_dict">
-        </table>-->
+        </table>
 
     </context>
 </generatorConfiguration>

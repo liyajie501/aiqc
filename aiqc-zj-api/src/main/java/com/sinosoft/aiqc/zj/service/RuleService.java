@@ -1,10 +1,6 @@
 package com.sinosoft.aiqc.zj.service;
 
 import com.alibaba.fastjson.JSON;
-import com.sinosoft.aiqc.db.dao.YyzjCRuleMapper;
-import com.sinosoft.aiqc.db.dao.YyzjCRuleToTypeMapper;
-import com.sinosoft.aiqc.db.dao.YyzjCRuleTypeMapper;
-import com.sinosoft.aiqc.db.domain.YyzjCProducerEleGroup;
 import com.sinosoft.aiqc.db.domain.YyzjCRule;
 import com.sinosoft.aiqc.db.service.RuleDbService;
 import com.sinosoft.aiqc.zj.dto.rule.ProducerEleValue;
@@ -13,7 +9,6 @@ import com.sinosoft.aiqc.zj.dto.rule.RuleAddReqDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -72,7 +67,7 @@ public class RuleService {
                 producerEleValueMap.put("sort", Integer.toString(sort));
                 sort++;
                 yyzjCProducerEleGroupList.add(producerEleValueMap);
-            }
+        }
 
         }
 

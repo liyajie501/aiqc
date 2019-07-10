@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.AssignTaskMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.AssignTask">
+    <id column="task_id" jdbcType="CHAR" property="taskId" />
+    <result column="sys_id" jdbcType="CHAR" property="sysId" />
+    <result column="cond_start_time" jdbcType="TIMESTAMP" property="condStartTime" />
+    <result column="cond_end_time" jdbcType="TIMESTAMP" property="condEndTime" />
+    <result column="cond_customer" jdbcType="VARCHAR" property="condCustomer" />
+    <result column="cond_durtime" jdbcType="INTEGER" property="condDurtime" />
+    <result column="cond_select_count" jdbcType="INTEGER" property="condSelectCount" />
+    <result column="quality_user_ids" jdbcType="VARCHAR" property="qualityUserIds" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="valid" jdbcType="CHAR" property="valid" />
+    <result column="exec_time" jdbcType="VARCHAR" property="execTime" />
+    <result column="delete_mark" jdbcType="CHAR" property="deleteMark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    task_id, sys_id, cond_start_time, cond_end_time, cond_customer, cond_durtime, cond_select_count, 
+    quality_user_ids, create_user, create_time, valid, exec_time, delete_mark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_c_assign_task
+    where task_id = #{taskId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_c_assign_task
+    where task_id = #{taskId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.AssignTask">
+    insert into yyzj_c_assign_task (task_id, sys_id, cond_start_time, 
+      cond_end_time, cond_customer, cond_durtime, 
+      cond_select_count, quality_user_ids, create_user, 
+      create_time, valid, exec_time, 
+      delete_mark)
+    values (#{taskId,jdbcType=CHAR}, #{sysId,jdbcType=CHAR}, #{condStartTime,jdbcType=TIMESTAMP}, 
+      #{condEndTime,jdbcType=TIMESTAMP}, #{condCustomer,jdbcType=VARCHAR}, #{condDurtime,jdbcType=INTEGER}, 
+      #{condSelectCount,jdbcType=INTEGER}, #{qualityUserIds,jdbcType=VARCHAR}, #{createUser,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{valid,jdbcType=CHAR}, #{execTime,jdbcType=VARCHAR}, 
+      #{deleteMark,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.AssignTask">
+    insert into yyzj_c_assign_task
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="taskId != null">
+        task_id,
+      </if>
+      <if test="sysId != null">
+        sys_id,
+      </if>
+      <if test="condStartTime != null">
+        cond_start_time,
+      </if>
+      <if test="condEndTime != null">
+        cond_end_time,
+      </if>
+      <if test="condCustomer != null">
+        cond_customer,
+      </if>
+      <if test="condDurtime != null">
+        cond_durtime,
+      </if>
+      <if test="condSelectCount != null">
+        cond_select_count,
+      </if>
+      <if test="qualityUserIds != null">
+        quality_user_ids,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="valid != null">
+        valid,
+      </if>
+      <if test="execTime != null">
+        exec_time,
+      </if>
+      <if test="deleteMark != null">
+        delete_mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="taskId != null">
+        #{taskId,jdbcType=CHAR},
+      </if>
+      <if test="sysId != null">
+        #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="condStartTime != null">
+        #{condStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="condEndTime != null">
+        #{condEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="condCustomer != null">
+        #{condCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="condDurtime != null">
+        #{condDurtime,jdbcType=INTEGER},
+      </if>
+      <if test="condSelectCount != null">
+        #{condSelectCount,jdbcType=INTEGER},
+      </if>
+      <if test="qualityUserIds != null">
+        #{qualityUserIds,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valid != null">
+        #{valid,jdbcType=CHAR},
+      </if>
+      <if test="execTime != null">
+        #{execTime,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteMark != null">
+        #{deleteMark,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.AssignTask">
+    update yyzj_c_assign_task
+    <set>
+      <if test="sysId != null">
+        sys_id = #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="condStartTime != null">
+        cond_start_time = #{condStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="condEndTime != null">
+        cond_end_time = #{condEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="condCustomer != null">
+        cond_customer = #{condCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="condDurtime != null">
+        cond_durtime = #{condDurtime,jdbcType=INTEGER},
+      </if>
+      <if test="condSelectCount != null">
+        cond_select_count = #{condSelectCount,jdbcType=INTEGER},
+      </if>
+      <if test="qualityUserIds != null">
+        quality_user_ids = #{qualityUserIds,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valid != null">
+        valid = #{valid,jdbcType=CHAR},
+      </if>
+      <if test="execTime != null">
+        exec_time = #{execTime,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteMark != null">
+        delete_mark = #{deleteMark,jdbcType=CHAR},
+      </if>
+    </set>
+    where task_id = #{taskId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.AssignTask">
+    update yyzj_c_assign_task
+    set sys_id = #{sysId,jdbcType=CHAR},
+      cond_start_time = #{condStartTime,jdbcType=TIMESTAMP},
+      cond_end_time = #{condEndTime,jdbcType=TIMESTAMP},
+      cond_customer = #{condCustomer,jdbcType=VARCHAR},
+      cond_durtime = #{condDurtime,jdbcType=INTEGER},
+      cond_select_count = #{condSelectCount,jdbcType=INTEGER},
+      quality_user_ids = #{qualityUserIds,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      valid = #{valid,jdbcType=CHAR},
+      exec_time = #{execTime,jdbcType=VARCHAR},
+      delete_mark = #{deleteMark,jdbcType=CHAR}
+    where task_id = #{taskId,jdbcType=CHAR}
+  </update>
+</mapper>

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -71,8 +70,11 @@ public class RuleDbService {
      */
     public void addRule(Map<String, String> addMap) {
 
+        // 查询最大RuleId
         String ruleId = yyzjCRuleMapper.selectMaxRuleId();
         int ruleId_int = Integer.parseInt(ruleId) + 1;
+
+        // 查询最大GroupId
         String groupId = yyzjCProducerEleGroupMapper.selectMaxGroupId();
         int groupId_int = Integer.parseInt(groupId) + 1;
 
@@ -119,6 +121,12 @@ public class RuleDbService {
 
         List<ModelToRule> ruleList = yyzjCRuleMapper.selectRulesByModelId(modelId);
 
+        return ruleList;
+    }
+
+
+    public List<YyzjCRule> selectByPrimaryKeys(List<String> var1) {
+        List<YyzjCRule> ruleList = yyzjCRuleMapper.selectByPrimaryKeys(var1);
         return ruleList;
     }
 }

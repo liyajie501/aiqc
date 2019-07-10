@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.AlarmLogMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.AlarmLog">
+    <id column="alarm_log_id" jdbcType="CHAR" property="alarmLogId" />
+    <result column="score_total_data_id" jdbcType="VARCHAR" property="scoreTotalDataId" />
+    <result column="score_detail_data_id" jdbcType="VARCHAR" property="scoreDetailDataId" />
+    <result column="base_id" jdbcType="VARCHAR" property="baseId" />
+    <result column="alarm_id" jdbcType="CHAR" property="alarmId" />
+    <result column="send_time" jdbcType="TIMESTAMP" property="sendTime" />
+    <result column="send_type" jdbcType="CHAR" property="sendType" />
+    <result column="receive_user" jdbcType="VARCHAR" property="receiveUser" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="result" jdbcType="CHAR" property="result" />
+    <result column="rule_id" jdbcType="CHAR" property="ruleId" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="result_text" jdbcType="VARCHAR" property="resultText" />
+    <result column="sys_id" jdbcType="CHAR" property="sysId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="audio_code" jdbcType="VARCHAR" property="audioCode" />
+    <result column="record_file" jdbcType="VARCHAR" property="recordFile" />
+    <result column="total_score_id" jdbcType="CHAR" property="totalScoreId" />
+    <result column="detail_score_id" jdbcType="CHAR" property="detailScoreId" />
+    <result column="mark" jdbcType="CHAR" property="mark" />
+    
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="agent_id" jdbcType="VARCHAR" property="agentId" />
+    <result column="result_flag" jdbcType="INTEGER" property="resultFlag" />
+
+    <result column="rule_name" jdbcType="VARCHAR" property="ruleName" />
+    <result column="total_score_name" jdbcType="VARCHAR" property="totalScoreName" />
+    <result column="sys_name" jdbcType="VARCHAR" property="sysName" />
+    <result column="receive_user_name" jdbcType="VARCHAR" property="receiveUserName" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    
+    
+  </resultMap>
+  <sql id="Base_Column_List">
+    alarm_log_id, score_total_data_id, score_detail_data_id, base_id, alarm_id, send_time, 
+    send_type, receive_user, content, result, rule_id, status, result_text, sys_id, create_time, 
+    level, audio_code, record_file, total_score_id, detail_score_id,start_time,agent_id,result_flag,mark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_l_alarm_log${tableNameSuffix}
+    where alarm_log_id = #{alarmLogId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_l_alarm_log${tableNameSuffix}
+    where alarm_log_id = #{alarmLogId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.AlarmLog">
+    insert into yyzj_l_alarm_log${tableNameSuffix} (alarm_log_id, score_total_data_id, score_detail_data_id, 
+      base_id, alarm_id, send_time, 
+      send_type, receive_user, content, 
+      result, rule_id, status, result_text, 
+      sys_id, create_time, level, 
+      audio_code, record_file, total_score_id, 
+      detail_score_id,start_time,agent_id,result_flag,mark)
+    values (#{alarmLogId,jdbcType=CHAR}, #{scoreTotalDataId,jdbcType=VARCHAR}, #{scoreDetailDataId,jdbcType=VARCHAR}, 
+      #{baseId,jdbcType=VARCHAR}, #{alarmId,jdbcType=CHAR}, #{sendTime,jdbcType=TIMESTAMP}, 
+      #{sendType,jdbcType=CHAR}, #{receiveUser,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{result,jdbcType=CHAR}, #{ruleId,jdbcType=CHAR}, #{status,jdbcType=CHAR}, #{resultText,jdbcType=VARCHAR}, 
+      #{sysId,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{level,jdbcType=INTEGER}, 
+      #{audioCode,jdbcType=VARCHAR}, #{recordFile,jdbcType=VARCHAR}, #{totalScoreId,jdbcType=CHAR}, 
+      #{detailScoreId,jdbcType=CHAR},#{startTime,jdbcType=TIMESTAMP},#{agentId,jdbcType=VARCHAR},#{resultFlag,jdbcType=INTEGER},#{mark,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.AlarmLog">
+    insert into yyzj_l_alarm_log${tableNameSuffix}
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="alarmLogId != null">
+        alarm_log_id,
+      </if>
+      <if test="scoreTotalDataId != null">
+        score_total_data_id,
+      </if>
+      <if test="scoreDetailDataId != null">
+        score_detail_data_id,
+      </if>
+      <if test="baseId != null">
+        base_id,
+      </if>
+      <if test="alarmId != null">
+        alarm_id,
+      </if>
+      <if test="sendTime != null">
+        send_time,
+      </if>
+      <if test="sendType != null">
+        send_type,
+      </if>
+      <if test="receiveUser != null">
+        receive_user,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="result != null">
+        result,
+      </if>
+      <if test="ruleId != null">
+        rule_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="resultText != null">
+        result_text,
+      </if>
+      <if test="sysId != null">
+        sys_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="audioCode != null">
+        audio_code,
+      </if>
+      <if test="recordFile != null">
+        record_file,
+      </if>
+      <if test="totalScoreId != null">
+        total_score_id,
+      </if>
+      <if test="detailScoreId != null">
+        detail_score_id,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="agentId != null">
+        agent_id,
+      </if>
+      <if test="resultFlag != null">
+        result_flag,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="alarmLogId != null">
+        #{alarmLogId,jdbcType=CHAR},
+      </if>
+      <if test="scoreTotalDataId != null">
+        #{scoreTotalDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="scoreDetailDataId != null">
+        #{scoreDetailDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="baseId != null">
+        #{baseId,jdbcType=VARCHAR},
+      </if>
+      <if test="alarmId != null">
+        #{alarmId,jdbcType=CHAR},
+      </if>
+      <if test="sendTime != null">
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendType != null">
+        #{sendType,jdbcType=CHAR},
+      </if>
+      <if test="receiveUser != null">
+        #{receiveUser,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=CHAR},
+      </if>
+      <if test="ruleId != null">
+        #{ruleId,jdbcType=CHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="resultText != null">
+        #{resultText,jdbcType=VARCHAR},
+      </if>
+      <if test="sysId != null">
+        #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="audioCode != null">
+        #{audioCode,jdbcType=VARCHAR},
+      </if>
+      <if test="recordFile != null">
+        #{recordFile,jdbcType=VARCHAR},
+      </if>
+      <if test="totalScoreId != null">
+        #{totalScoreId,jdbcType=CHAR},
+      </if>
+      <if test="detailScoreId != null"> 
+        #{detailScoreId,jdbcType=CHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agentId != null">
+        #{agentId,jdbcType=VARCHAR},
+      </if>
+      <if test="resultFlag != null">
+        #{resultFlag,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.AlarmLog">
+    <!-- update yyzj_l_alarm_log${tableNameSuffix} -->
+    update yyzj_l_alarm_log
+    <set>
+      <if test="scoreTotalDataId != null">
+        score_total_data_id = #{scoreTotalDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="scoreDetailDataId != null">
+        score_detail_data_id = #{scoreDetailDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="baseId != null">
+        base_id = #{baseId,jdbcType=VARCHAR},
+      </if>
+      <if test="alarmId != null">
+        alarm_id = #{alarmId,jdbcType=CHAR},
+      </if>
+      <if test="sendTime != null">
+        send_time = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendType != null">
+        send_type = #{sendType,jdbcType=CHAR},
+      </if>
+      <if test="receiveUser != null">
+        receive_user = #{receiveUser,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        result = #{result,jdbcType=CHAR},
+      </if>
+      <if test="ruleId != null">
+        rule_id = #{ruleId,jdbcType=CHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=CHAR},
+      </if>
+      <if test="resultText != null">
+        result_text = #{resultText,jdbcType=VARCHAR},
+      </if>
+      <if test="sysId != null">
+        sys_id = #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="audioCode != null">
+        audio_code = #{audioCode,jdbcType=VARCHAR},
+      </if>
+      <if test="recordFile != null">
+        record_file = #{recordFile,jdbcType=VARCHAR},
+      </if>
+      <if test="totalScoreId != null">
+        total_score_id = #{totalScoreId,jdbcType=CHAR},
+      </if>
+      <if test="detailScoreId != null">
+        detail_score_id = #{detailScoreId,jdbcType=CHAR},
+      </if>
+      <if test="startTime != null">  
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agentId != null">
+        agent_id = #{agentId,jdbcType=VARCHAR},
+      </if>
+      <if test="resultFlag != null">
+        result_flag = #{resultFlag,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=CHAR},
+      </if>
+    </set>
+    where alarm_log_id = #{alarmLogId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.AlarmLog">
+    update yyzj_l_alarm_log${tableNameSuffix}
+    set score_total_data_id = #{scoreTotalDataId,jdbcType=VARCHAR},
+      score_detail_data_id = #{scoreDetailDataId,jdbcType=VARCHAR},
+      base_id = #{baseId,jdbcType=VARCHAR},
+      alarm_id = #{alarmId,jdbcType=CHAR},
+      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      send_type = #{sendType,jdbcType=CHAR},
+      receive_user = #{receiveUser,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      result = #{result,jdbcType=CHAR},
+      rule_id = #{ruleId,jdbcType=CHAR},
+      status = #{status,jdbcType=CHAR},
+      result_text = #{resultText,jdbcType=VARCHAR},
+      sys_id = #{sysId,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      level = #{level,jdbcType=INTEGER},
+      audio_code = #{audioCode,jdbcType=VARCHAR},
+      record_file = #{recordFile,jdbcType=VARCHAR},
+      total_score_id = #{totalScoreId,jdbcType=CHAR},
+      detail_score_id = #{detailScoreId,jdbcType=CHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      agent_id = #{agentId,jdbcType=VARCHAR},
+      result_flag =  #{resultFlag,jdbcType=INTEGER}
+      mark =  #{mark,jdbcType=CHAR}
+    where alarm_log_id = #{alarmLogId,jdbcType=CHAR}
+  </update>
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- <select id="getReadySendAlarmList" parameterType="java.lang.String"  resultMap="BaseResultMap">
+    select l.*,r.name rule_name,t.name total_score_name,s.name sys_name,u.username receive_user_name,u.mail mail
+    from yyzj_l_alarm_log l,yyzj_c_rule r, yyzj_c_score_total t,yyzj_c_join_sys s,user u
+	 where l.rule_id = r.rule_id
+	 and l.total_score_id=t.total_score_id
+	 and l.sys_id = s.sys_id
+	 and l.receive_user=u.id
+	 and l.send_time is null
+  </select> -->
+  
+  <!-- hyk  -->
+  <select id="getReadySendAlarmList" parameterType="java.util.List"  resultMap="BaseResultMap">
+	SELECT
+		l.*,
+		u.mail mail
+	FROM
+		yyzj_l_alarm_log l,
+		yyzj_c_alarm a,
+		`user` u
+	WHERE
+			l.alarm_id = a.alarm_id
+			AND l.send_time IS NULL
+			AND l.alarm_id in 
+  			<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+               	#{item}
+        	</foreach>
+        	AND u.id = l.receive_user
+  </select>
+  
+  
+	<update id="createNewTable" parameterType="java.lang.String">
+		create table if not exists yyzj_l_alarm_log${tableNameSuffix} like yyzj_l_alarm_log
+	</update>  
+	  
+  
+</mapper>

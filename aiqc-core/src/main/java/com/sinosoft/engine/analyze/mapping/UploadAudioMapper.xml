@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.UploadAudioMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.UploadAudio">
+    <id column="upload_id" jdbcType="CHAR" property="uploadId" />
+    <result column="sys_id" jdbcType="CHAR" property="sysId" />
+    <result column="file_name_show" jdbcType="VARCHAR" property="fileNameShow" />
+    <result column="file_name_upload" jdbcType="VARCHAR" property="fileNameUpload" />
+    <result column="file_size" jdbcType="DOUBLE" property="fileSize" />
+    <result column="file_format" jdbcType="VARCHAR" property="fileFormat" />
+    <result column="upload_user" jdbcType="VARCHAR" property="uploadUser" />
+    <result column="upload_time" jdbcType="TIMESTAMP" property="uploadTime" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="total_score_id" jdbcType="CHAR" property="totalScoreId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    upload_id, sys_id, file_name_show, file_name_upload, file_size, file_format, upload_user, 
+    upload_time, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_c_upload_audio
+    where upload_id = #{uploadId,jdbcType=CHAR}
+  </select>
+  
+    <select id="selectByTotalScoreId" parameterType="java.lang.String" resultType="java.lang.String">
+    select 
+    upload_id
+    from yyzj_c_upload_audio
+    where total_score_id = #{totalScoreId,jdbcType=CHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_c_upload_audio
+    where upload_id = #{uploadId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.UploadAudio">
+    insert into yyzj_c_upload_audio (upload_id, sys_id, file_name_show, 
+      file_name_upload, file_size, file_format, 
+      upload_user, upload_time, status
+      )
+    values (#{uploadId,jdbcType=CHAR}, #{sysId,jdbcType=CHAR}, #{fileNameShow,jdbcType=VARCHAR}, 
+      #{fileNameUpload,jdbcType=VARCHAR}, #{fileSize,jdbcType=DOUBLE}, #{fileFormat,jdbcType=VARCHAR}, 
+      #{uploadUser,jdbcType=VARCHAR}, #{uploadTime,jdbcType=TIMESTAMP}, #{status,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.UploadAudio">
+    insert into yyzj_c_upload_audio
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uploadId != null">
+        upload_id,
+      </if>
+      <if test="sysId != null">
+        sys_id,
+      </if>
+      <if test="fileNameShow != null">
+        file_name_show,
+      </if>
+      <if test="fileNameUpload != null">
+        file_name_upload,
+      </if>
+      <if test="fileSize != null">
+        file_size,
+      </if>
+      <if test="fileFormat != null">
+        file_format,
+      </if>
+      <if test="uploadUser != null">
+        upload_user,
+      </if>
+      <if test="uploadTime != null">
+        upload_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uploadId != null">
+        #{uploadId,jdbcType=CHAR},
+      </if>
+      <if test="sysId != null">
+        #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="fileNameShow != null">
+        #{fileNameShow,jdbcType=VARCHAR},
+      </if>
+      <if test="fileNameUpload != null">
+        #{fileNameUpload,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        #{fileSize,jdbcType=DOUBLE},
+      </if>
+      <if test="fileFormat != null">
+        #{fileFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadUser != null">
+        #{uploadUser,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null">
+        #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.UploadAudio">
+    update yyzj_c_upload_audio
+    <set>
+      <if test="sysId != null">
+        sys_id = #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="fileNameShow != null">
+        file_name_show = #{fileNameShow,jdbcType=VARCHAR},
+      </if>
+      <if test="fileNameUpload != null">
+        file_name_upload = #{fileNameUpload,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        file_size = #{fileSize,jdbcType=DOUBLE},
+      </if>
+      <if test="fileFormat != null">
+        file_format = #{fileFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadUser != null">
+        upload_user = #{uploadUser,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null">
+        upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=CHAR},
+      </if>
+    </set>
+    where upload_id = #{uploadId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.UploadAudio">
+    update yyzj_c_upload_audio
+    set sys_id = #{sysId,jdbcType=CHAR},
+      file_name_show = #{fileNameShow,jdbcType=VARCHAR},
+      file_name_upload = #{fileNameUpload,jdbcType=VARCHAR},
+      file_size = #{fileSize,jdbcType=DOUBLE},
+      file_format = #{fileFormat,jdbcType=VARCHAR},
+      upload_user = #{uploadUser,jdbcType=VARCHAR},
+      upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=CHAR}
+    where upload_id = #{uploadId,jdbcType=CHAR}
+  </update>
+</mapper>

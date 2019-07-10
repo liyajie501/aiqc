@@ -3,12 +3,12 @@ package com.sinosoft.aiqc.zj.web;
 import com.alibaba.fastjson.JSON;
 import com.sinosoft.aiqc.zj.dto.model.ModelReqDto;
 import com.sinosoft.aiqc.zj.service.ModelManageService;
+import com.sun.istack.internal.NotNull;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 

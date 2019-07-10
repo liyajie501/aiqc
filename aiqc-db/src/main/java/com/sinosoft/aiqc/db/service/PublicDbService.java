@@ -1,34 +1,48 @@
+
 package com.sinosoft.aiqc.db.service;
 
+import com.alibaba.fastjson.JSON;
+import com.sinosoft.aiqc.db.dao.YyzjCDictMapper;
 import com.sinosoft.aiqc.db.dao.YyzjDSysDictMapper;
-import com.sinosoft.aiqc.db.domain.YyzjDSysDict;
-import com.sinosoft.aiqc.db.domain.YyzjDSysDictExample;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import com.sinosoft.aiqc.db.domain.YyzjCDict;
+import com.sinosoft.aiqc.db.domain.YyzjCDictExample;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
 
 @Service
 @Transactional
 public class PublicDbService {
 
-    private final Log logger = LogFactory.getLog(PublicDbService.class);
+    private final Logger logger = Logger.getLogger(PublicDbService.class);
 
     @Resource
-    private  YyzjDSysDictMapper yyzjDSysDictMapper;
+    private YyzjDSysDictMapper yyzjDSysDictMapper;
 
-    public  List<YyzjDSysDict> queryDataDictionary(String parentId){
+    @Resource
+    private YyzjCDictMapper yyzjCDictMapper;
 
-        YyzjDSysDictExample yyzjDSysDictExample = new YyzjDSysDictExample();
-        YyzjDSysDictExample.Criteria criteria = yyzjDSysDictExample.createCriteria();
-        criteria.andParentIdEqualTo(parentId);
-        logger.debug("");
-        List<YyzjDSysDict> yyzjDSysDictList = yyzjDSysDictMapper.selectByExample(yyzjDSysDictExample);
 
-        return yyzjDSysDictList;
+    public List<YyzjCDict> queryDataDictionary(String type) {
+        logger.debug("queryDataDictionary 方法入参：type=" + type);
+            /*YyzjDSysDictExample yyzjDSysDictExample = new YyzjDSysDictExample();
+            YyzjDSysDictExample.Criteria criteria = yyzjDSysDictExample.createCriteria();
+            criteria.andParentIdEqualTo(parentId);
+
+            List<YyzjDSysDict> yyzjDSysDictList = yyzjDSysDictMapper.selectByExample(yyzjDSysDictExample);*/
+
+        YyzjCDictExample yyzjCDictExample = new YyzjCDictExample();
+        YyzjCDictExample.Criteria criteria = yyzjCDictExample.createCriteria();
+        criteria.andTypeEqualTo(type);
+
+        List<YyzjCDict> yyzjCDictList = yyzjCDictMapper.selectByExample(yyzjCDictExample);
+
+        logger.debug("queryDataDictionary 查询结果：parentId=" + JSON.toJSONString(yyzjCDictList));
+
+
+        return yyzjCDictList;
     }
 }

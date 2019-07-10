@@ -162,4 +162,6 @@ public interface YyzjCRuleMapper {
      * @return
      */
     List<ModelToRule> selectRulesByModelId(String modelId);
+
+    List<YyzjCRule> selectByPrimaryKeys(List<String> var1);
 }

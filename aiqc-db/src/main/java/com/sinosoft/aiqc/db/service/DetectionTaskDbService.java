@@ -20,6 +20,7 @@ public class DetectionTaskDbService {
 
     /**
      * 添加质检任务
+     *
      * @param reqStr
      * @return 返回任务ID
      */
@@ -31,4 +32,10 @@ public class DetectionTaskDbService {
         return Integer.toString(scoreTotal_return.getTotalScoreId());
 
     }
+
+
+
+
+
 }
+

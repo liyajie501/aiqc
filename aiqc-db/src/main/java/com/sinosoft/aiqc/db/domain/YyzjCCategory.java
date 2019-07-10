@@ -75,7 +75,7 @@ public class YyzjCCategory {
      *
      * @mbg.generated
      */
-    private Byte deleteMark;
+    private String deleteMark;
 
     /**
      *
@@ -289,7 +289,7 @@ public class YyzjCCategory {
      *
      * @mbg.generated
      */
-    public Byte getDeleteMark() {
+    public String getDeleteMark() {
         return deleteMark;
     }
 
@@ -301,7 +301,7 @@ public class YyzjCCategory {
      *
      * @mbg.generated
      */
-    public void setDeleteMark(Byte deleteMark) {
+    public void setDeleteMark(String deleteMark) {
         this.deleteMark = deleteMark;
     }
 

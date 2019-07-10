@@ -8,6 +8,8 @@ public class ModelToRule {
 
     private String ruleId;
 
+    private String context;
+
     private String contextShow;
 
     private String modelId;
@@ -18,6 +20,14 @@ public class ModelToRule {
 
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
+    }
+
+    public String getContext() {
+        return context;
+    }
+
+    public void setContext(String context) {
+        this.context = context;
     }
 
     public String getContextShow() {

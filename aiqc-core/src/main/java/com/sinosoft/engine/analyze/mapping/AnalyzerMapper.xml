@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.AnalyzerMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.Analyzer">
+    <id column="analyzer_id" jdbcType="CHAR" property="analyzerId" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="info" jdbcType="VARCHAR" property="info" />
+    <result column="publish_user" jdbcType="VARCHAR" property="publishUser" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="publish_mark" jdbcType="VARCHAR" property="publishMark" />
+    <result column="analyzer_class" jdbcType="VARCHAR" property="analyzerClass" />
+    <result column="producer_page" jdbcType="VARCHAR" property="producerPage" />
+    <result column="delete_mark" jdbcType="VARCHAR" property="deleteMark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    analyzer_id, code, version, name, info, publish_user, publish_time, publish_mark, 
+    analyzer_class, producer_page, delete_mark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_c_analyzer
+    where analyzer_id = #{analyzerId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_c_analyzer
+    where analyzer_id = #{analyzerId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Analyzer">
+    insert into yyzj_c_analyzer (analyzer_id, code, version, 
+      name, info, publish_user, 
+      publish_time, publish_mark, analyzer_class, 
+      producer_page, delete_mark)
+    values (#{analyzerId,jdbcType=CHAR}, #{code,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{info,jdbcType=VARCHAR}, #{publishUser,jdbcType=VARCHAR}, 
+      #{publishTime,jdbcType=TIMESTAMP}, #{publishMark,jdbcType=VARCHAR}, #{analyzerClass,jdbcType=VARCHAR}, 
+      #{producerPage,jdbcType=VARCHAR}, #{deleteMark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Analyzer">
+    insert into yyzj_c_analyzer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="analyzerId != null">
+        analyzer_id,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="info != null">
+        info,
+      </if>
+      <if test="publishUser != null">
+        publish_user,
+      </if>
+      <if test="publishTime != null">
+        publish_time,
+      </if>
+      <if test="publishMark != null">
+        publish_mark,
+      </if>
+      <if test="analyzerClass != null">
+        analyzer_class,
+      </if>
+      <if test="producerPage != null">
+        producer_page,
+      </if>
+      <if test="deleteMark != null">
+        delete_mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="analyzerId != null">
+        #{analyzerId,jdbcType=CHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null">
+        #{info,jdbcType=VARCHAR},
+      </if>
+      <if test="publishUser != null">
+        #{publishUser,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="publishMark != null">
+        #{publishMark,jdbcType=VARCHAR},
+      </if>
+      <if test="analyzerClass != null">
+        #{analyzerClass,jdbcType=VARCHAR},
+      </if>
+      <if test="producerPage != null">
+        #{producerPage,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteMark != null">
+        #{deleteMark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Analyzer">
+    update yyzj_c_analyzer
+    <set>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null">
+        info = #{info,jdbcType=VARCHAR},
+      </if>
+      <if test="publishUser != null">
+        publish_user = #{publishUser,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="publishMark != null">
+        publish_mark = #{publishMark,jdbcType=VARCHAR},
+      </if>
+      <if test="analyzerClass != null">
+        analyzer_class = #{analyzerClass,jdbcType=VARCHAR},
+      </if>
+      <if test="producerPage != null">
+        producer_page = #{producerPage,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteMark != null">
+        delete_mark = #{deleteMark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where analyzer_id = #{analyzerId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Analyzer">
+    update yyzj_c_analyzer
+    set code = #{code,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      info = #{info,jdbcType=VARCHAR},
+      publish_user = #{publishUser,jdbcType=VARCHAR},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      publish_mark = #{publishMark,jdbcType=VARCHAR},
+      analyzer_class = #{analyzerClass,jdbcType=VARCHAR},
+      producer_page = #{producerPage,jdbcType=VARCHAR},
+      delete_mark = #{deleteMark,jdbcType=VARCHAR}
+    where analyzer_id = #{analyzerId,jdbcType=CHAR}
+  </update>
+</mapper>

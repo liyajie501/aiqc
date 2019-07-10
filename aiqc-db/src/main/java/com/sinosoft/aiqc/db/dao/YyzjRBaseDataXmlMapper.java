@@ -1,8 +1,9 @@
 package com.sinosoft.aiqc.db.dao;
 
+import java.util.List;
+
 import com.sinosoft.aiqc.db.domain.YyzjRBaseDataXml;
 import com.sinosoft.aiqc.db.domain.YyzjRBaseDataXmlExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface YyzjRBaseDataXmlMapper {
@@ -129,4 +130,7 @@ public interface YyzjRBaseDataXmlMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(YyzjRBaseDataXml record);
+
+
+
 }

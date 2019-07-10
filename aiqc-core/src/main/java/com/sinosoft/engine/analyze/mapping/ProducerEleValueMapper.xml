@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.ProducerEleValueMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.ProducerEleValue">
+    <id column="ele_value_id" jdbcType="CHAR" property="eleValueId" />
+    <result column="ele_id" jdbcType="CHAR" property="eleId" />
+    <result column="ele_group_id" jdbcType="CHAR" property="eleGroupId" />
+    <result column="ele_value" jdbcType="VARCHAR" property="eleValue" />
+    <result column="ele_value_type" jdbcType="INTEGER" property="eleValueType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ele_value_id, ele_id, ele_group_id, ele_value
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_c_producer_ele_value
+    where ele_value_id = #{eleValueId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_c_producer_ele_value
+    where ele_value_id = #{eleValueId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ProducerEleValue">
+    insert into yyzj_c_producer_ele_value (ele_value_id, ele_id, ele_group_id, 
+      ele_value)
+    values (#{eleValueId,jdbcType=CHAR}, #{eleId,jdbcType=CHAR}, #{eleGroupId,jdbcType=CHAR}, 
+      #{eleValue,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ProducerEleValue">
+    insert into yyzj_c_producer_ele_value
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eleValueId != null">
+        ele_value_id,
+      </if>
+      <if test="eleId != null">
+        ele_id,
+      </if>
+      <if test="eleGroupId != null">
+        ele_group_id,
+      </if>
+      <if test="eleValue != null">
+        ele_value,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eleValueId != null">
+        #{eleValueId,jdbcType=CHAR},
+      </if>
+      <if test="eleId != null">
+        #{eleId,jdbcType=CHAR},
+      </if>
+      <if test="eleGroupId != null">
+        #{eleGroupId,jdbcType=CHAR},
+      </if>
+      <if test="eleValue != null">
+        #{eleValue,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ProducerEleValue">
+    update yyzj_c_producer_ele_value
+    <set>
+      <if test="eleId != null">
+        ele_id = #{eleId,jdbcType=CHAR},
+      </if>
+      <if test="eleGroupId != null">
+        ele_group_id = #{eleGroupId,jdbcType=CHAR},
+      </if>
+      <if test="eleValue != null">
+        ele_value = #{eleValue,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ele_value_id = #{eleValueId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ProducerEleValue">
+    update yyzj_c_producer_ele_value
+    set ele_id = #{eleId,jdbcType=CHAR},
+      ele_group_id = #{eleGroupId,jdbcType=CHAR},
+      ele_value = #{eleValue,jdbcType=VARCHAR}
+    where ele_value_id = #{eleValueId,jdbcType=CHAR}
+  </update>
+</mapper>

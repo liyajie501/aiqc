@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.QualityUserYyyymmMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.QualityUserYyyymm">
+    <id column="report_id" jdbcType="CHAR" property="reportId" />
+    <result column="base_id" jdbcType="VARCHAR" property="baseId" />
+    <result column="score_detail_data_id" jdbcType="VARCHAR" property="scoreDetailDataId" />
+    <result column="quality_user" jdbcType="VARCHAR" property="qualityUser" />
+    <result column="quality_date" jdbcType="TIMESTAMP" property="qualityDate" />
+    <result column="appeal_user" jdbcType="VARCHAR" property="appealUser" />
+    <result column="process_result" jdbcType="VARCHAR" property="processResult" />
+    <result column="process_duration" jdbcType="INTEGER" property="processDuration" />
+    <result column="audio_code" jdbcType="VARCHAR" property="audioCode" />
+    <result column="sys_id" jdbcType="CHAR" property="sysId" />
+    <result column="rule_id" jdbcType="CHAR" property="ruleId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    report_id, base_id, score_detail_data_id, quality_user, quality_date, appeal_user, 
+    process_result, process_duration, audio_code, sys_id, rule_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_t_quality_user_yyyymm
+    where report_id = #{reportId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_t_quality_user_yyyymm
+    where report_id = #{reportId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.QualityUserYyyymm">
+    insert into yyzj_t_quality_user_yyyymm (report_id, base_id, score_detail_data_id, 
+      quality_user, quality_date, appeal_user, 
+      process_result, process_duration, audio_code, 
+      sys_id, rule_id)
+    values (#{reportId,jdbcType=CHAR}, #{baseId,jdbcType=VARCHAR}, #{scoreDetailDataId,jdbcType=VARCHAR}, 
+      #{qualityUser,jdbcType=VARCHAR}, #{qualityDate,jdbcType=TIMESTAMP}, #{appealUser,jdbcType=VARCHAR}, 
+      #{processResult,jdbcType=VARCHAR}, #{processDuration,jdbcType=INTEGER}, #{audioCode,jdbcType=VARCHAR}, 
+      #{sysId,jdbcType=CHAR}, #{ruleId,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.QualityUserYyyymm">
+    insert into yyzj_t_quality_user_yyyymm
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="reportId != null">
+        report_id,
+      </if>
+      <if test="baseId != null">
+        base_id,
+      </if>
+      <if test="scoreDetailDataId != null">
+        score_detail_data_id,
+      </if>
+      <if test="qualityUser != null">
+        quality_user,
+      </if>
+      <if test="qualityDate != null">
+        quality_date,
+      </if>
+      <if test="appealUser != null">
+        appeal_user,
+      </if>
+      <if test="processResult != null">
+        process_result,
+      </if>
+      <if test="processDuration != null">
+        process_duration,
+      </if>
+      <if test="audioCode != null">
+        audio_code,
+      </if>
+      <if test="sysId != null">
+        sys_id,
+      </if>
+      <if test="ruleId != null">
+        rule_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="reportId != null">
+        #{reportId,jdbcType=CHAR},
+      </if>
+      <if test="baseId != null">
+        #{baseId,jdbcType=VARCHAR},
+      </if>
+      <if test="scoreDetailDataId != null">
+        #{scoreDetailDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityUser != null">
+        #{qualityUser,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityDate != null">
+        #{qualityDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appealUser != null">
+        #{appealUser,jdbcType=VARCHAR},
+      </if>
+      <if test="processResult != null">
+        #{processResult,jdbcType=VARCHAR},
+      </if>
+      <if test="processDuration != null">
+        #{processDuration,jdbcType=INTEGER},
+      </if>
+      <if test="audioCode != null">
+        #{audioCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sysId != null">
+        #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="ruleId != null">
+        #{ruleId,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.QualityUserYyyymm">
+    update yyzj_t_quality_user_yyyymm
+    <set>
+      <if test="baseId != null">
+        base_id = #{baseId,jdbcType=VARCHAR},
+      </if>
+      <if test="scoreDetailDataId != null">
+        score_detail_data_id = #{scoreDetailDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityUser != null">
+        quality_user = #{qualityUser,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityDate != null">
+        quality_date = #{qualityDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appealUser != null">
+        appeal_user = #{appealUser,jdbcType=VARCHAR},
+      </if>
+      <if test="processResult != null">
+        process_result = #{processResult,jdbcType=VARCHAR},
+      </if>
+      <if test="processDuration != null">
+        process_duration = #{processDuration,jdbcType=INTEGER},
+      </if>
+      <if test="audioCode != null">
+        audio_code = #{audioCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sysId != null">
+        sys_id = #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="ruleId != null">
+        rule_id = #{ruleId,jdbcType=CHAR},
+      </if>
+    </set>
+    where report_id = #{reportId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.QualityUserYyyymm">
+    update yyzj_t_quality_user_yyyymm
+    set base_id = #{baseId,jdbcType=VARCHAR},
+      score_detail_data_id = #{scoreDetailDataId,jdbcType=VARCHAR},
+      quality_user = #{qualityUser,jdbcType=VARCHAR},
+      quality_date = #{qualityDate,jdbcType=TIMESTAMP},
+      appeal_user = #{appealUser,jdbcType=VARCHAR},
+      process_result = #{processResult,jdbcType=VARCHAR},
+      process_duration = #{processDuration,jdbcType=INTEGER},
+      audio_code = #{audioCode,jdbcType=VARCHAR},
+      sys_id = #{sysId,jdbcType=CHAR},
+      rule_id = #{ruleId,jdbcType=CHAR}
+    where report_id = #{reportId,jdbcType=CHAR}
+  </update>
+</mapper>

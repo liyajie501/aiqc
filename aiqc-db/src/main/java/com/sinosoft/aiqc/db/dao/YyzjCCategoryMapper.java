@@ -129,4 +129,6 @@ public interface YyzjCCategoryMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(YyzjCCategory record);
+
+    List<YyzjCCategory> selectByExampleSelective(YyzjCCategory record);
 }

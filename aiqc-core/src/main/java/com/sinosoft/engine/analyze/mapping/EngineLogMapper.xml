@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.EngineLogMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.EngineLog">
+    <id column="log_id" jdbcType="CHAR" property="logId" />
+    <result column="engine_id" jdbcType="CHAR" property="engineId" />
+    <result column="session" jdbcType="VARCHAR" property="session" />
+    <result column="freq_time" jdbcType="TIMESTAMP" property="freqTime" />
+    <result column="error_log" jdbcType="VARCHAR" property="errorLog" />
+    <result column="normal_log" jdbcType="VARCHAR" property="normalLog" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    log_id, engine_id, session, freq_time, error_log, normal_log
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_l_engine_log
+    where log_id = #{logId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_l_engine_log
+    where log_id = #{logId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.EngineLog">
+    insert into yyzj_l_engine_log (log_id, engine_id, session, 
+      freq_time, error_log, normal_log
+      )
+    values (#{logId,jdbcType=CHAR}, #{engineId,jdbcType=CHAR}, #{session,jdbcType=VARCHAR}, 
+      #{freqTime,jdbcType=TIMESTAMP}, #{errorLog,jdbcType=VARCHAR}, #{normalLog,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.EngineLog">
+    insert into yyzj_l_engine_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        log_id,
+      </if>
+      <if test="engineId != null">
+        engine_id,
+      </if>
+      <if test="session != null">
+        session,
+      </if>
+      <if test="freqTime != null">
+        freq_time,
+      </if>
+      <if test="errorLog != null">
+        error_log,
+      </if>
+      <if test="normalLog != null">
+        normal_log,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        #{logId,jdbcType=CHAR},
+      </if>
+      <if test="engineId != null">
+        #{engineId,jdbcType=CHAR},
+      </if>
+      <if test="session != null">
+        #{session,jdbcType=VARCHAR},
+      </if>
+      <if test="freqTime != null">
+        #{freqTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="errorLog != null">
+        #{errorLog,jdbcType=VARCHAR},
+      </if>
+      <if test="normalLog != null">
+        #{normalLog,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.EngineLog">
+    update yyzj_l_engine_log
+    <set>
+      <if test="engineId != null">
+        engine_id = #{engineId,jdbcType=CHAR},
+      </if>
+      <if test="session != null">
+        session = #{session,jdbcType=VARCHAR},
+      </if>
+      <if test="freqTime != null">
+        freq_time = #{freqTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="errorLog != null">
+        error_log = #{errorLog,jdbcType=VARCHAR},
+      </if>
+      <if test="normalLog != null">
+        normal_log = #{normalLog,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.EngineLog">
+    update yyzj_l_engine_log
+    set engine_id = #{engineId,jdbcType=CHAR},
+      session = #{session,jdbcType=VARCHAR},
+      freq_time = #{freqTime,jdbcType=TIMESTAMP},
+      error_log = #{errorLog,jdbcType=VARCHAR},
+      normal_log = #{normalLog,jdbcType=VARCHAR}
+    where log_id = #{logId,jdbcType=CHAR}
+  </update>
+</mapper>

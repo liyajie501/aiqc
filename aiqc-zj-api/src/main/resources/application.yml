@@ -14,3 +14,23 @@ logging:
     org.mybatis:  ERROR
     com.sinosoft.aiqc.wx:  DEBUG
     com.sinosoft.aiqc:  ERROR
+
+
+yyzj:
+  analyze:
+    web:
+      path: http://localhost:8080/analyze/
+
+
+engine:
+  analyze:
+    save:
+      source: false
+      word: false
+      rule:
+        exec:
+          result:
+            ele: false
+    class:
+      loader:
+        url: E:/workspace/HYTX/analyze/target/znyyzj_analyze/WEB-INF/classes

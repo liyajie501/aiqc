@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.ScoreTotalDataMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    <id column="score_total_data_id" jdbcType="CHAR" property="scoreTotalDataId" />
+    <result column="total_score_result_id" jdbcType="CHAR" property="totalScoreResultId" />
+    <result column="base_id" jdbcType="VARCHAR" property="baseId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="total_score" jdbcType="DOUBLE" property="totalScore" />
+    <result column="agent_id" jdbcType="VARCHAR" property="agentId" />
+    <result column="audio_code" jdbcType="VARCHAR" property="audioCode" />
+    <result column="record_duration" jdbcType="INTEGER" property="recordDuration" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="remote_uri" jdbcType="VARCHAR" property="remoteUri" />
+    <result column="local_uri" jdbcType="VARCHAR" property="localUri" />
+    <result column="record_file" jdbcType="VARCHAR" property="recordFile" />
+    <result column="total_score_id" jdbcType="CHAR" property="totalScoreId" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="statement_number" jdbcType="INTEGER" property="statementNumber" />
+    <result column="call_type" jdbcType="CHAR" property="callType" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    <result column="sys_id" jdbcType="LONGVARCHAR" property="sysId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    score_total_data_id, total_score_result_id, base_id, create_time, total_score, agent_id, 
+    audio_code, record_duration, start_time, remote_uri, local_uri, record_file, total_score_id, 
+    end_time, statement_number, call_type
+  </sql>
+  <sql id="Blob_Column_List">
+    sys_id
+  </sql>
+    <!-- 动态传入表名 -->
+  <sql id="Base_Table_Name" >
+  	<if test="tableNameSuffix !=null and tableNameSuffix !=''">yyzj_t_score_total_data${tableNameSuffix}</if>
+  </sql>
+   <select id="selectByWhere" resultMap="ResultMapWithBLOBs" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    select 
+     <include refid="Base_Column_List" />,<include refid="Blob_Column_List" />
+    from  <include refid="Base_Table_Name" />
+    where 1=1
+    <if test="totalScoreId != null and totalScoreId != ''" >
+	    and total_score_result_id = #{totalScoreResultId,jdbcType=CHAR}
+    </if>
+    <if test="startTime != null and startTime != ''" >
+    	and start_time &gt;= #{startTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="endTime != null and endTime != ''" >
+    	and start_time &lt;= #{endTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="agentId != null and agentId != ''" >
+	    and agent_id like #{agentId,jdbcType=CHAR}
+    </if>
+    <if test="baseId != null and baseId != ''" >
+	    and base_id like #{baseId,jdbcType=CHAR}
+    </if>
+    <if test="remoteUri != null and remoteUri != ''" >
+	    and remote_uri like #{remoteUri,jdbcType=CHAR}
+    </if>
+    <if test="localUri != null and localUri != ''" >
+	    and local_uri like #{localUri,jdbcType=CHAR}
+    </if>	
+  </select>
+   <select id="countByWhere" resultType="java.lang.Integer" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    select 
+     count(0)
+    from  <include refid="Base_Table_Name" />
+    where 1=1
+    <if test="totalScoreId != null and totalScoreId != ''" >
+	    and total_score_result_id = #{totalScoreResultId,jdbcType=CHAR}
+    </if>
+    <if test="startTime != null and startTime != ''" >
+    	and start_time &gt;= #{startTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="endTime != null and endTime != ''" >
+    	and start_time &lt;= #{endTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="agentId != null and agentId != ''" >
+	    and agent_id like #{agentId,jdbcType=CHAR}
+    </if>
+    <if test="baseId != null and baseId != ''" >
+	    and base_id like #{baseId,jdbcType=CHAR}
+    </if>
+    <if test="remoteUri != null and remoteUri != ''" >
+	    and remote_uri like #{remoteUri,jdbcType=CHAR}
+    </if>
+    <if test="localUri != null and localUri != ''" >
+	    and local_uri like #{localUri,jdbcType=CHAR}
+    </if>	
+  </select>
+     <select id="getAllAgentIds" resultType="java.lang.String" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    select
+    agent_id
+    from  <include refid="Base_Table_Name" />
+    where 1=1
+    <if test="totalScoreId != null and totalScoreId != ''" >
+	    and total_score_id = #{totalScoreId,jdbcType=CHAR}
+    </if>
+    <if test="startTime != null and startTime != ''" >
+    	and start_time &gt;= #{startTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="endTime != null and endTime != ''" >
+    	and start_time &lt;= #{endTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="agentId != null and agentId != ''" >
+	    and agent_id like #{agentId,jdbcType=CHAR}
+    </if>
+    <if test="remoteUri != null and remoteUri != ''" >
+	    and remote_uri like #{remoteUri,jdbcType=CHAR}
+    </if>
+    <if test="localUri != null and localUri != ''" >
+	    and local_uri like #{localUri,jdbcType=CHAR}
+    </if>	
+ group by agent_id
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from yyzj_t_score_total_data${tableNameSuffix}
+    where score_total_data_id = #{scoreTotalDataId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_t_score_total_data${tableNameSuffix}
+    where score_total_data_id = #{scoreTotalDataId,jdbcType=CHAR}
+  </delete>
+
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    insert into yyzj_t_score_total_data${tableNameSuffix} (score_total_data_id, total_score_result_id, base_id,
+      create_time, total_score, agent_id,
+      audio_code, record_duration, start_time, 
+      remote_uri, local_uri, record_file, 
+      total_score_id, end_time, statement_number, 
+      call_type, sys_id)
+    values (#{scoreTotalDataId,jdbcType=CHAR}, #{totalScoreResultId,jdbcType=CHAR}, #{baseId,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{totalScore,jdbcType=DOUBLE}, #{agentId,jdbcType=VARCHAR}, 
+      #{audioCode,jdbcType=VARCHAR}, #{recordDuration,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{remoteUri,jdbcType=VARCHAR}, #{localUri,jdbcType=VARCHAR}, #{recordFile,jdbcType=VARCHAR}, 
+      #{totalScoreId,jdbcType=CHAR}, #{endTime,jdbcType=TIMESTAMP}, #{statementNumber,jdbcType=INTEGER}, 
+      #{callType,jdbcType=CHAR}, #{sysId,jdbcType=LONGVARCHAR})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    insert into yyzj_t_score_total_data${tableNameSuffix}
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="scoreTotalDataId != null">
+        score_total_data_id,
+      </if>
+      <if test="totalScoreResultId != null">
+        total_score_result_id,
+      </if>
+      <if test="baseId != null">
+        base_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="totalScore != null">
+        total_score,
+      </if>
+      <if test="agentId != null">
+        agent_id,
+      </if>
+      <if test="audioCode != null">
+        audio_code,
+      </if>
+      <if test="recordDuration != null">
+        record_duration,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="remoteUri != null">
+        remote_uri,
+      </if>
+      <if test="localUri != null">
+        local_uri,
+      </if>
+      <if test="recordFile != null">
+        record_file,
+      </if>
+      <if test="totalScoreId != null">
+        total_score_id,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="statementNumber != null">
+        statement_number,
+      </if>
+      <if test="callType != null">
+        call_type,
+      </if>
+      <if test="sysId != null">
+        sys_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="scoreTotalDataId != null">
+        #{scoreTotalDataId,jdbcType=CHAR},
+      </if>
+      <if test="totalScoreResultId != null">
+        #{totalScoreResultId,jdbcType=CHAR},
+      </if>
+      <if test="baseId != null">
+        #{baseId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalScore != null">
+        #{totalScore,jdbcType=DOUBLE},
+      </if>
+      <if test="agentId != null">
+        #{agentId,jdbcType=VARCHAR},
+      </if>
+      <if test="audioCode != null">
+        #{audioCode,jdbcType=VARCHAR},
+      </if>
+      <if test="recordDuration != null">
+        #{recordDuration,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remoteUri != null">
+        #{remoteUri,jdbcType=VARCHAR},
+      </if>
+      <if test="localUri != null">
+        #{localUri,jdbcType=VARCHAR},
+      </if>
+      <if test="recordFile != null">
+        #{recordFile,jdbcType=VARCHAR},
+      </if>
+      <if test="totalScoreId != null">
+        #{totalScoreId,jdbcType=CHAR},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statementNumber != null">
+        #{statementNumber,jdbcType=INTEGER},
+      </if>
+      <if test="callType != null">
+        #{callType,jdbcType=CHAR},
+      </if>
+      <if test="sysId != null">
+        #{sysId,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    update yyzj_t_score_total_data${tableNameSuffix}
+    <set>
+      <if test="totalScoreResultId != null">
+        total_score_result_id = #{totalScoreResultId,jdbcType=CHAR},
+      </if>
+      <if test="baseId != null">
+        base_id = #{baseId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalScore != null">
+        total_score = #{totalScore,jdbcType=DOUBLE},
+      </if>
+      <if test="agentId != null">
+        agent_id = #{agentId,jdbcType=VARCHAR},
+      </if>
+      <if test="audioCode != null">
+        audio_code = #{audioCode,jdbcType=VARCHAR},
+      </if>
+      <if test="recordDuration != null">
+        record_duration = #{recordDuration,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remoteUri != null">
+        remote_uri = #{remoteUri,jdbcType=VARCHAR},
+      </if>
+      <if test="localUri != null">
+        local_uri = #{localUri,jdbcType=VARCHAR},
+      </if>
+      <if test="recordFile != null">
+        record_file = #{recordFile,jdbcType=VARCHAR},
+      </if>
+      <if test="totalScoreId != null">
+        total_score_id = #{totalScoreId,jdbcType=CHAR},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statementNumber != null">
+        statement_number = #{statementNumber,jdbcType=INTEGER},
+      </if>
+      <if test="callType != null">
+        call_type = #{callType,jdbcType=CHAR},
+      </if>
+      <if test="sysId != null">
+        sys_id = #{sysId,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where score_total_data_id = #{scoreTotalDataId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    update yyzj_t_score_total_data${tableNameSuffix}
+    set total_score_result_id = #{totalScoreResultId,jdbcType=CHAR},
+      base_id = #{baseId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      total_score = #{totalScore,jdbcType=DOUBLE},
+      agent_id = #{agentId,jdbcType=VARCHAR},
+      audio_code = #{audioCode,jdbcType=VARCHAR},
+      record_duration = #{recordDuration,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      remote_uri = #{remoteUri,jdbcType=VARCHAR},
+      local_uri = #{localUri,jdbcType=VARCHAR},
+      record_file = #{recordFile,jdbcType=VARCHAR},
+      total_score_id = #{totalScoreId,jdbcType=CHAR},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      statement_number = #{statementNumber,jdbcType=INTEGER},
+      call_type = #{callType,jdbcType=CHAR},
+      sys_id = #{sysId,jdbcType=LONGVARCHAR}
+    where score_total_data_id = #{scoreTotalDataId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+    update yyzj_t_score_total_data${tableNameSuffix}
+    set total_score_result_id = #{totalScoreResultId,jdbcType=CHAR},
+      base_id = #{baseId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      total_score = #{totalScore,jdbcType=DOUBLE},
+      agent_id = #{agentId,jdbcType=VARCHAR},
+      audio_code = #{audioCode,jdbcType=VARCHAR},
+      record_duration = #{recordDuration,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      remote_uri = #{remoteUri,jdbcType=VARCHAR},
+      local_uri = #{localUri,jdbcType=VARCHAR},
+      record_file = #{recordFile,jdbcType=VARCHAR},
+      total_score_id = #{totalScoreId,jdbcType=CHAR},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      statement_number = #{statementNumber,jdbcType=INTEGER},
+      call_type = #{callType,jdbcType=CHAR}
+    where score_total_data_id = #{scoreTotalDataId,jdbcType=CHAR}
+  </update>
+    <update id="createNewTable" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreTotalData">
+		create table if not exists yyzj_t_score_total_data${tableNameSuffix} like yyzj_t_score_total_data
+  </update>
+</mapper>

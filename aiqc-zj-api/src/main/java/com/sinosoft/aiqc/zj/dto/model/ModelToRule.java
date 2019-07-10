@@ -1,7 +1,7 @@
 package com.sinosoft.aiqc.zj.dto.model;
 
+import com.alibaba.fastjson.JSONObject;
 import com.sinosoft.aiqc.db.domain.RuleTemp;
-import org.json.JSONObject;
 
 public class ModelToRule extends RuleTemp {
 

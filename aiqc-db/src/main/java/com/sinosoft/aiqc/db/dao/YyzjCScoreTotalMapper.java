@@ -140,4 +140,7 @@ public interface YyzjCScoreTotalMapper {
      * @return
      */
     YyzjCScoreTotal insertReturnClass(YyzjCScoreTotal record);
+
+
+    List<YyzjCScoreTotal> selectByPrimaryKeys(List<String> totalScoreId);
 }

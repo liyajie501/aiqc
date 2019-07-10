@@ -12,10 +12,10 @@
 
     <dependencies>
 
-        <dependency>
+       <!-- <dependency>
             <groupId>com.sinosoft</groupId>
             <artifactId>aiqc-core</artifactId>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>com.sinosoft</groupId>
@@ -27,6 +27,27 @@
             <artifactId>aiqc-zj-api</artifactId>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>5.0.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>8.5.32</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>8.5.32</version>
+        </dependency>
 
     </dependencies>
 

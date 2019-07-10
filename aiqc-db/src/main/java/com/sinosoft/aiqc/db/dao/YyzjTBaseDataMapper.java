@@ -1,5 +1,6 @@
 package com.sinosoft.aiqc.db.dao;
 
+import com.sinosoft.aiqc.db.analyze.cassandra.model.BaseData;
 import com.sinosoft.aiqc.db.domain.YyzjTBaseData;
 import com.sinosoft.aiqc.db.domain.YyzjTBaseDataExample;
 import java.util.List;
@@ -129,4 +130,7 @@ public interface YyzjTBaseDataMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(YyzjTBaseData record);
+
+
+    List<BaseData> getBaseDataById(String var1);
 }

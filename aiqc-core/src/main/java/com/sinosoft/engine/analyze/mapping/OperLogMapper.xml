@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.OperLogMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.OperLog">
+    <id column="oper_id" jdbcType="CHAR" property="operId" />
+    <result column="user_jd" jdbcType="VARCHAR" property="userJd" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="operate" jdbcType="VARCHAR" property="operate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    oper_id, user_jd, create_time, operate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_l_oper_log
+    where oper_id = #{operId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_l_oper_log
+    where oper_id = #{operId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.OperLog">
+    insert into yyzj_l_oper_log (oper_id, user_jd, create_time, 
+      operate)
+    values (#{operId,jdbcType=CHAR}, #{userJd,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{operate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.OperLog">
+    insert into yyzj_l_oper_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operId != null">
+        oper_id,
+      </if>
+      <if test="userJd != null">
+        user_jd,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="operate != null">
+        operate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operId != null">
+        #{operId,jdbcType=CHAR},
+      </if>
+      <if test="userJd != null">
+        #{userJd,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operate != null">
+        #{operate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.OperLog">
+    update yyzj_l_oper_log
+    <set>
+      <if test="userJd != null">
+        user_jd = #{userJd,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operate != null">
+        operate = #{operate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where oper_id = #{operId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.OperLog">
+    update yyzj_l_oper_log
+    set user_jd = #{userJd,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      operate = #{operate,jdbcType=VARCHAR}
+    where oper_id = #{operId,jdbcType=CHAR}
+  </update>
+</mapper>

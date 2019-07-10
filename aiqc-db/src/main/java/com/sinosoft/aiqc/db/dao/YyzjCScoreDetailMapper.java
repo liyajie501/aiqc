@@ -3,6 +3,8 @@ package com.sinosoft.aiqc.db.dao;
 import com.sinosoft.aiqc.db.domain.YyzjCScoreDetail;
 import com.sinosoft.aiqc.db.domain.YyzjCScoreDetailExample;
 import java.util.List;
+
+import com.sinosoft.aiqc.db.domain.extend.RuleAndScoreDetail;
 import org.apache.ibatis.annotations.Param;
 
 public interface YyzjCScoreDetailMapper {
@@ -129,4 +131,6 @@ public interface YyzjCScoreDetailMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(YyzjCScoreDetail record);
+
+    List<RuleAndScoreDetail> selectByTotalScoreId(@Param("totalScoreId") String totalScoreId, @Param("ruleIds") List<String> ruleIds);
 }

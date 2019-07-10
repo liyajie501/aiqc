@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.AppealMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.Appeal">
+    <id column="appeal_id" jdbcType="CHAR" property="appealId" />
+    <result column="base_id" jdbcType="VARCHAR" property="baseId" />
+    <result column="score_detail_data_id" jdbcType="VARCHAR" property="scoreDetailDataId" />
+    <result column="appeal_user_id" jdbcType="VARCHAR" property="appealUserId" />
+    <result column="appeal_date" jdbcType="TIMESTAMP" property="appealDate" />
+    <result column="appeal_desc" jdbcType="VARCHAR" property="appealDesc" />
+    <result column="review_user_id" jdbcType="VARCHAR" property="reviewUserId" />
+    <result column="review_result" jdbcType="CHAR" property="reviewResult" />
+    <result column="review_desc" jdbcType="VARCHAR" property="reviewDesc" />
+    <result column="problem_type" jdbcType="CHAR" property="problemType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    appeal_id, base_id, score_detail_data_id, appeal_user_id, appeal_date, appeal_desc, 
+    review_user_id, review_result, review_desc, problem_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_c_appeal
+    where appeal_id = #{appealId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_c_appeal
+    where appeal_id = #{appealId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Appeal">
+    insert into yyzj_c_appeal (appeal_id, base_id, score_detail_data_id, 
+      appeal_user_id, appeal_date, appeal_desc, 
+      review_user_id, review_result, review_desc, 
+      problem_type)
+    values (#{appealId,jdbcType=CHAR}, #{baseId,jdbcType=VARCHAR}, #{scoreDetailDataId,jdbcType=VARCHAR}, 
+      #{appealUserId,jdbcType=VARCHAR}, #{appealDate,jdbcType=TIMESTAMP}, #{appealDesc,jdbcType=VARCHAR}, 
+      #{reviewUserId,jdbcType=VARCHAR}, #{reviewResult,jdbcType=CHAR}, #{reviewDesc,jdbcType=VARCHAR}, 
+      #{problemType,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Appeal">
+    insert into yyzj_c_appeal
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="appealId != null">
+        appeal_id,
+      </if>
+      <if test="baseId != null">
+        base_id,
+      </if>
+      <if test="scoreDetailDataId != null">
+        score_detail_data_id,
+      </if>
+      <if test="appealUserId != null">
+        appeal_user_id,
+      </if>
+      <if test="appealDate != null">
+        appeal_date,
+      </if>
+      <if test="appealDesc != null">
+        appeal_desc,
+      </if>
+      <if test="reviewUserId != null">
+        review_user_id,
+      </if>
+      <if test="reviewResult != null">
+        review_result,
+      </if>
+      <if test="reviewDesc != null">
+        review_desc,
+      </if>
+      <if test="problemType != null">
+        problem_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="appealId != null">
+        #{appealId,jdbcType=CHAR},
+      </if>
+      <if test="baseId != null">
+        #{baseId,jdbcType=VARCHAR},
+      </if>
+      <if test="scoreDetailDataId != null">
+        #{scoreDetailDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="appealUserId != null">
+        #{appealUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="appealDate != null">
+        #{appealDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appealDesc != null">
+        #{appealDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewUserId != null">
+        #{reviewUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewResult != null">
+        #{reviewResult,jdbcType=CHAR},
+      </if>
+      <if test="reviewDesc != null">
+        #{reviewDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="problemType != null">
+        #{problemType,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Appeal">
+    update yyzj_c_appeal
+    <set>
+      <if test="baseId != null">
+        base_id = #{baseId,jdbcType=VARCHAR},
+      </if>
+      <if test="scoreDetailDataId != null">
+        score_detail_data_id = #{scoreDetailDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="appealUserId != null">
+        appeal_user_id = #{appealUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="appealDate != null">
+        appeal_date = #{appealDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appealDesc != null">
+        appeal_desc = #{appealDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewUserId != null">
+        review_user_id = #{reviewUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewResult != null">
+        review_result = #{reviewResult,jdbcType=CHAR},
+      </if>
+      <if test="reviewDesc != null">
+        review_desc = #{reviewDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="problemType != null">
+        problem_type = #{problemType,jdbcType=CHAR},
+      </if>
+    </set>
+    where appeal_id = #{appealId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Appeal">
+    update yyzj_c_appeal
+    set base_id = #{baseId,jdbcType=VARCHAR},
+      score_detail_data_id = #{scoreDetailDataId,jdbcType=VARCHAR},
+      appeal_user_id = #{appealUserId,jdbcType=VARCHAR},
+      appeal_date = #{appealDate,jdbcType=TIMESTAMP},
+      appeal_desc = #{appealDesc,jdbcType=VARCHAR},
+      review_user_id = #{reviewUserId,jdbcType=VARCHAR},
+      review_result = #{reviewResult,jdbcType=CHAR},
+      review_desc = #{reviewDesc,jdbcType=VARCHAR},
+      problem_type = #{problemType,jdbcType=CHAR}
+    where appeal_id = #{appealId,jdbcType=CHAR}
+  </update>
+</mapper>

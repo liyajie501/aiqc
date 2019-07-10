@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.ScoreUpdateMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.ScoreUpdate">
+    <id column="update_id" jdbcType="CHAR" property="updateId" />
+    <result column="score_detail_data_id" jdbcType="VARCHAR" property="scoreDetailDataId" />
+    <result column="source_type" jdbcType="CHAR" property="sourceType" />
+    <result column="source_id" jdbcType="CHAR" property="sourceId" />
+    <result column="workorder_id" jdbcType="VARCHAR" property="workorderId" />
+    <result column="apply_user" jdbcType="VARCHAR" property="applyUser" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="score_old" jdbcType="REAL" property="scoreOld" />
+    <result column="score_new" jdbcType="REAL" property="scoreNew" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    update_id, score_detail_data_id, source_type, source_id, workorder_id, apply_user, 
+    update_user, update_time, score_old, score_new
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_t_score_update
+    where update_id = #{updateId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_t_score_update
+    where update_id = #{updateId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreUpdate">
+    insert into yyzj_t_score_update (update_id, score_detail_data_id, source_type, 
+      source_id, workorder_id, apply_user, 
+      update_user, update_time, score_old, 
+      score_new)
+    values (#{updateId,jdbcType=CHAR}, #{scoreDetailDataId,jdbcType=VARCHAR}, #{sourceType,jdbcType=CHAR}, 
+      #{sourceId,jdbcType=CHAR}, #{workorderId,jdbcType=VARCHAR}, #{applyUser,jdbcType=VARCHAR}, 
+      #{updateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{scoreOld,jdbcType=REAL}, 
+      #{scoreNew,jdbcType=REAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreUpdate">
+    insert into yyzj_t_score_update
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="updateId != null">
+        update_id,
+      </if>
+      <if test="scoreDetailDataId != null">
+        score_detail_data_id,
+      </if>
+      <if test="sourceType != null">
+        source_type,
+      </if>
+      <if test="sourceId != null">
+        source_id,
+      </if>
+      <if test="workorderId != null">
+        workorder_id,
+      </if>
+      <if test="applyUser != null">
+        apply_user,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="scoreOld != null">
+        score_old,
+      </if>
+      <if test="scoreNew != null">
+        score_new,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="updateId != null">
+        #{updateId,jdbcType=CHAR},
+      </if>
+      <if test="scoreDetailDataId != null">
+        #{scoreDetailDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceType != null">
+        #{sourceType,jdbcType=CHAR},
+      </if>
+      <if test="sourceId != null">
+        #{sourceId,jdbcType=CHAR},
+      </if>
+      <if test="workorderId != null">
+        #{workorderId,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUser != null">
+        #{applyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="scoreOld != null">
+        #{scoreOld,jdbcType=REAL},
+      </if>
+      <if test="scoreNew != null">
+        #{scoreNew,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreUpdate">
+    update yyzj_t_score_update
+    <set>
+      <if test="scoreDetailDataId != null">
+        score_detail_data_id = #{scoreDetailDataId,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceType != null">
+        source_type = #{sourceType,jdbcType=CHAR},
+      </if>
+      <if test="sourceId != null">
+        source_id = #{sourceId,jdbcType=CHAR},
+      </if>
+      <if test="workorderId != null">
+        workorder_id = #{workorderId,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUser != null">
+        apply_user = #{applyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="scoreOld != null">
+        score_old = #{scoreOld,jdbcType=REAL},
+      </if>
+      <if test="scoreNew != null">
+        score_new = #{scoreNew,jdbcType=REAL},
+      </if>
+    </set>
+    where update_id = #{updateId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.ScoreUpdate">
+    update yyzj_t_score_update
+    set score_detail_data_id = #{scoreDetailDataId,jdbcType=VARCHAR},
+      source_type = #{sourceType,jdbcType=CHAR},
+      source_id = #{sourceId,jdbcType=CHAR},
+      workorder_id = #{workorderId,jdbcType=VARCHAR},
+      apply_user = #{applyUser,jdbcType=VARCHAR},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      score_old = #{scoreOld,jdbcType=REAL},
+      score_new = #{scoreNew,jdbcType=REAL}
+    where update_id = #{updateId,jdbcType=CHAR}
+  </update>
+</mapper>

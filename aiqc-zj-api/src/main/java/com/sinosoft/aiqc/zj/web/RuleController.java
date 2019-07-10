@@ -4,13 +4,12 @@ import com.alibaba.fastjson.JSON;
 import com.sinosoft.aiqc.zj.dto.rule.QueryRuleInfosReqDto;
 import com.sinosoft.aiqc.zj.dto.rule.RuleAddReqDto;
 import com.sinosoft.aiqc.zj.service.RuleService;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import com.sun.istack.internal.NotNull;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +18,7 @@ import java.util.Map;
 @Validated
 public class RuleController {
 
-    private final Log logger = LogFactory.getLog(RuleController.class);
+    private final Logger logger = Logger.getLogger(RuleController.class);
 
     @Autowired
     private RuleService ruleService;
@@ -41,7 +40,7 @@ public class RuleController {
     };
 
     /**
-     * 添加规则
+     * 添加
      * @param ruleStr
      */
     @PostMapping("/add")

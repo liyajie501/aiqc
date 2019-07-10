@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huayunworld.znyyzj.engine.analyze.dao.JoinSysMapper">
+  <resultMap id="BaseResultMap" type="com.huayunworld.znyyzj.engine.analyze.model.JoinSys">
+    <id column="sys_id" jdbcType="CHAR" property="sysId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="info" jdbcType="VARCHAR" property="info" />
+    <result column="ftp_ip" jdbcType="VARCHAR" property="ftpIp" />
+    <result column="ftp_port" jdbcType="VARCHAR" property="ftpPort" />
+    <result column="ftp_path" jdbcType="VARCHAR" property="ftpPath" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="valid" jdbcType="CHAR" property="valid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    sys_id, name, info, ftp_ip, ftp_port, ftp_path, username, password, valid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yyzj_c_join_sys
+    where sys_id = #{sysId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yyzj_c_join_sys
+    where sys_id = #{sysId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.huayunworld.znyyzj.engine.analyze.model.JoinSys">
+    insert into yyzj_c_join_sys (sys_id, name, info, 
+      ftp_ip, ftp_port, ftp_path, 
+      username, password, valid
+      )
+    values (#{sysId,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{info,jdbcType=VARCHAR}, 
+      #{ftpIp,jdbcType=VARCHAR}, #{ftpPort,jdbcType=VARCHAR}, #{ftpPath,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{valid,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.JoinSys">
+    insert into yyzj_c_join_sys
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sysId != null">
+        sys_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="info != null">
+        info,
+      </if>
+      <if test="ftpIp != null">
+        ftp_ip,
+      </if>
+      <if test="ftpPort != null">
+        ftp_port,
+      </if>
+      <if test="ftpPath != null">
+        ftp_path,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="valid != null">
+        valid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sysId != null">
+        #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null">
+        #{info,jdbcType=VARCHAR},
+      </if>
+      <if test="ftpIp != null">
+        #{ftpIp,jdbcType=VARCHAR},
+      </if>
+      <if test="ftpPort != null">
+        #{ftpPort,jdbcType=VARCHAR},
+      </if>
+      <if test="ftpPath != null">
+        #{ftpPath,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null">
+        #{valid,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huayunworld.znyyzj.engine.analyze.model.JoinSys">
+    update yyzj_c_join_sys
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null">
+        info = #{info,jdbcType=VARCHAR},
+      </if>
+      <if test="ftpIp != null">
+        ftp_ip = #{ftpIp,jdbcType=VARCHAR},
+      </if>
+      <if test="ftpPort != null">
+        ftp_port = #{ftpPort,jdbcType=VARCHAR},
+      </if>
+      <if test="ftpPath != null">
+        ftp_path = #{ftpPath,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null">
+        valid = #{valid,jdbcType=CHAR},
+      </if>
+    </set>
+    where sys_id = #{sysId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huayunworld.znyyzj.engine.analyze.model.JoinSys">
+    update yyzj_c_join_sys
+    set name = #{name,jdbcType=VARCHAR},
+      info = #{info,jdbcType=VARCHAR},
+      ftp_ip = #{ftpIp,jdbcType=VARCHAR},
+      ftp_port = #{ftpPort,jdbcType=VARCHAR},
+      ftp_path = #{ftpPath,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      valid = #{valid,jdbcType=CHAR}
+    where sys_id = #{sysId,jdbcType=CHAR}
+  </update>
+  
+  
+  
+  
+  
+  
+  <select id="getScanSysList" parameterType="com.huayunworld.znyyzj.engine.analyze.model.Engine" resultMap="BaseResultMap">
+    select 
+    s.sys_id, s.name, s.info, s.ftp_ip, s.ftp_port, s.ftp_path, s.username, s.password, s.valid
+    from yyzj_c_engine e, yyzj_c_engine_to_sys t, yyzj_c_join_sys s
+	 where 1=1
+	 and e.engine_id = t.engine_id
+	 and t.sys_id = s.sys_id
+	 and e.engine_ip = #{engineIp,jdbcType=VARCHAR}
+	 and e.engine_port = #{enginePort,jdbcType=VARCHAR}
+	 and e.type = #{type,jdbcType=VARCHAR}
+	 and e.version = #{version,jdbcType=VARCHAR}
+	 and s.valid = '1'
+  </select>
+  
+  
+  
+</mapper>

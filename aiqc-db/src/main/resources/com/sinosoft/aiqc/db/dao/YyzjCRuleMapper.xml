@@ -29,12 +29,6 @@
         <result column="dict_code" jdbcType="CHAR" property="dictCode"/>
     </resultMap>
 
-    <resultMap id="BaseResultMap_B" type="com.sinosoft.aiqc.db.domain.ModelToRule">
-        <id column="rule_id" jdbcType="CHAR" property="ruleId"/>
-        <result column="context_show" jdbcType="VARCHAR" property="contextShow"/>
-        <result column="model_id" jdbcType="VARCHAR" property="modelId"/>
-    </resultMap>
-
     <sql id="Base_Column_ALL">
     d.dict_id, d.name dict_name, d.parent_id dict_parent_id,d.code dict_code,
     rule_id, analyzer_id, r.name name, info , context, create_user, create_time, publish_user,
@@ -714,16 +708,37 @@
     </select>
 
 
+    <resultMap id="BaseResultMap_B" type="com.sinosoft.aiqc.db.domain.ModelToRule">
+        <id column="rule_id" jdbcType="CHAR" property="ruleId"/>
+        <result column="context" jdbcType="VARCHAR" property="context"/>
+        <result column="context_show" jdbcType="VARCHAR" property="contextShow"/>
+        <result column="model_id" jdbcType="VARCHAR" property="modelId"/>
+    </resultMap>
+
     <select id="selectRulesByModelId" resultMap="BaseResultMap_B">
         SELECT
 	        a.rule_id ruleId,
 	        a.model_id modelId,
-	        b.context_show contextShow
-
+	        b.context_show contextShow,
+	        b.context context
         FROM
 	        yyzj_c_model_to_rule a
         LEFT JOIN yyzj_c_rule b ON b.rule_id = a.rule_id
         WHERE a.model_id = #{modelId}
+    </select>
+
+
+    <select id="selectByPrimaryKeys" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from yyzj_c_rule
+        where 1=1
+        <if test="list != null and list.size() > 0">
+            and rule_id in
+            (<foreach collection="list" item="ruleId" separator="," index="index">
+            #{ruleId,jdbcType=CHAR}
+        </foreach>)
+        </if>
     </select>
 
 
