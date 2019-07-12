@@ -2654,4 +2654,9 @@ public class YyzjCRuleExample {
             this(condition, value, secondValue, null);
         }
     }
+
+    public void setOredCriteria(List<Criteria> oredCriteria) {
+        this.oredCriteria = oredCriteria;
+    }
+
 }

@@ -25,7 +25,7 @@ public class ScoreManageService {
     private ScoreTotalDbService scoreTotalDbService;
 
     // @Value("${yyzj.analyze.web.path}")
-    private String analyzeWebPath = "http://localhost:8080/analyze/";
+    // private String analyzeWebPath = "http://localhost:8080/analyze/";
 
 
     public int insertScoreInfo(ScoreTotal scoreTotal) {
@@ -37,7 +37,7 @@ public class ScoreManageService {
         int resultNum = scoreDetailDbService.insertScoreDateil(JSON.toJSONString(scoreDetail));
 
         if (scoreTotal.getPublishMark().equals("1")) {
-                String url = this.analyzeWebPath + "rest/message/send/scoreTotalTask/" + scoreTotal.getTotalScoreId();
+                String url = "http://localhost:8080/analyze/rest/message/send/scoreTotalTask/" + scoreTotal.getTotalScoreId();
                 String data = HttpClient.post(url);
                 if (!data.equals(Contanst.SUCCESS)) {
                     this.logger.debug("调用质检任务接口失败:" + url);

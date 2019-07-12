@@ -12,10 +12,10 @@
 
     <dependencies>
 
-       <!-- <dependency>
+        <dependency>
             <groupId>com.sinosoft</groupId>
             <artifactId>aiqc-core</artifactId>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>com.sinosoft</groupId>

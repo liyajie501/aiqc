@@ -3,12 +3,14 @@ package com.sinosoft.aiqc.zj.web;
 
 import com.alibaba.fastjson.JSON;
 import com.sinosoft.aiqc.db.domain.YyzjCDict;
-import com.sinosoft.aiqc.zj.dto.common.DataDictionaryReqDto;
 import com.sinosoft.aiqc.zj.service.PublicService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -31,17 +33,20 @@ public class PublicController {
      */
     @PostMapping("/queryDataDictionary")
     @ResponseBody
-    public String queryDataDictionary(@RequestBody String reqstr) {
+    public String queryDataDictionary() {
         logger.info("queryDataDictionary 获取数据字典方法执行开始>>>>>>>>>>>");
+
+        /*@RequestBody String reqstr;
         logger.info("请求报文：" + reqstr);
         // 请求报文=>实体类
         DataDictionaryReqDto dataDictionaryReqDto = null;
         if (reqstr != null) {
             dataDictionaryReqDto = JSON.parseObject(reqstr, DataDictionaryReqDto.class);
-        }
-        List<YyzjCDict> yyzjCDictList = publicService.queryDataDictionary(dataDictionaryReqDto);
-
-        logger.info("queryDataDictionary 获取数据字典方法执行开始>>>>>>>>>>>");
+            List<YyzjCDict> yyzjCDictList = publicService.queryDataDictionary(dataDictionaryReqDto);
+        }*/
+        List<YyzjCDict> yyzjCDictList = publicService.queryDataDictionary();
+        logger.info("queryDataDictionary 获取数据字典方法返回信息：" + JSON.toJSONString(yyzjCDictList));
+        logger.info("queryDataDictionary 获取数据字典方法执行结束>>>>>>>>>>>");
 
         return JSON.toJSONString(yyzjCDictList);
     }

@@ -21,7 +21,7 @@
     </properties>
 
     <modules>
-        <!-- <module>aiqc-core</module> -->
+        <module>aiqc-core</module>
         <module>aiqc-db</module>
         <module>aiqc-zj-api</module>
         <module>aiqc-all</module>

@@ -32,4 +32,17 @@ public class PublicService {
 
         return yyzjCDictList;
     }
+
+    /**
+     * 查询所有数据字典
+     *
+     * @return
+     */
+    public List<YyzjCDict> queryDataDictionary() {
+        logger.info("");
+
+        List<YyzjCDict> yyzjCDictList = publicDbService.queryDataDictionary();
+
+        return yyzjCDictList;
+    }
 }

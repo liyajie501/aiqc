@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Speech" type="SpeechType"/>
+  <xs:complexType name="SpeechType">
+    <xs:sequence>
+      <xs:element type="SubjectType" name="Subject"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Uri"/>
+    <xs:attribute type="xs:string" name="Duration"/>
+  </xs:complexType>
+  <xs:complexType name="SubjectType">
+    <xs:sequence>
+      <xs:element type="RoleType" name="Role" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Name"/>
+  </xs:complexType>
+  <xs:complexType name="EndPointType">
+    <xs:sequence>
+      <xs:element type="ItemType" name="Item" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Count" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="RoleType">
+    <xs:sequence>
+      <xs:element type="EndPointType" name="EndPoint"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Name" use="optional"/>
+    <xs:attribute type="xs:string" name="Channel" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="ItemType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="ResultCode"/>
+      <xs:element type="xs:string" name="Text"/>
+      <xs:element type="xs:string" name="Weight"/>
+      <xs:element type="xs:string" name="Time"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Begin" use="optional"/>
+    <xs:attribute type="xs:string" name="End" use="optional"/>
+  </xs:complexType>
+</xs:schema>

@@ -34,3 +34,10 @@ engine:
     class:
       loader:
         url: E:/workspace/HYTX/analyze/target/znyyzj_analyze/WEB-INF/classes
+
+zj:
+  uploadAudio:
+    path: E:/workspace/HYTX/analyze/target/znyyzj_analyze/WEB-INF/classes
+  mount:
+    root:
+      path: E:/workspace/HYTX/analyze/target/znyyzj_analyze/WEB-INF/classes

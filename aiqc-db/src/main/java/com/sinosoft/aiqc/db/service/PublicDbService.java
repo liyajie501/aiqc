@@ -45,4 +45,18 @@ public class PublicDbService {
 
         return yyzjCDictList;
     }
+
+
+    public List<YyzjCDict> queryDataDictionary() {
+        logger.debug("queryDataDictionary 进入>>>>>>>>>>>>>>>");
+
+        YyzjCDictExample yyzjCDictExample = new YyzjCDictExample();
+
+        List<YyzjCDict> yyzjCDictList = yyzjCDictMapper.selectByExample(yyzjCDictExample);
+
+        logger.debug("queryDataDictionary 查询结果：parentId=" + JSON.toJSONString(yyzjCDictList));
+
+
+        return yyzjCDictList;
+    }
 }

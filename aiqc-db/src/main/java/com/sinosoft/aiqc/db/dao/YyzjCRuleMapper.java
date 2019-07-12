@@ -3,10 +3,10 @@ package com.sinosoft.aiqc.db.dao;
 import com.sinosoft.aiqc.db.domain.ModelToRule;
 import com.sinosoft.aiqc.db.domain.YyzjCRule;
 import com.sinosoft.aiqc.db.domain.YyzjCRuleExample;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
+import java.util.Map;
 
 public interface YyzjCRuleMapper {
     /**
@@ -142,6 +142,14 @@ public interface YyzjCRuleMapper {
     List<YyzjCRule> selectRuleInfos(YyzjCRule record);
 
     /**
+     * 质检规则清单查询
+     *
+     * @param record
+     * @return
+     */
+    List<YyzjCRule> selectRuleInfos(Map<String, Object> record);
+
+    /**
      * 查询总条数
      */
     long selectRuleCount(YyzjCRule record);
@@ -164,4 +172,5 @@ public interface YyzjCRuleMapper {
     List<ModelToRule> selectRulesByModelId(String modelId);
 
     List<YyzjCRule> selectByPrimaryKeys(List<String> var1);
+
 }

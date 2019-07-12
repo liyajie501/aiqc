@@ -17,7 +17,13 @@
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
 
-        <!--<dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>1.4.2.RELEASE</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.sinosoft</groupId>
             <artifactId>aiqc-core</artifactId>
             <exclusions>
@@ -26,7 +32,7 @@
                     <groupId>commons-lang</groupId>
                 </exclusion>
             </exclusions>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>com.sinosoft</groupId>
@@ -119,6 +125,163 @@
             <artifactId>spring-data-elasticsearch</artifactId>
             <version>2.0.2.RELEASE</version>
         </dependency>
+
+        <!-- ASR 所需包-->
+        <dependency>
+            <groupId>com.pachira.vcgclient</groupId>
+            <artifactId>vcgclient</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/VCGClient-1.0.jar
+            </systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.baidu.acu</groupId>
+            <artifactId>baidu</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/audio-streaming-client-java-1.0.0-SNAPSHOT.jar
+            </systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <version>1.3.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>1.9.10</version>
+        </dependency>
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy-agent</artifactId>
+            <version>1.9.10</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-context -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-context</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-core -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-core</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-netty -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf-lite -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf-lite</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-stub -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>26.0-android</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.33.Final</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.opencensus/opencensus-api -->
+        <dependency>
+            <groupId>io.opencensus</groupId>
+            <artifactId>opencensus-api</artifactId>
+            <version>0.12.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-grpc-metrics -->
+        <dependency>
+            <groupId>io.opencensus</groupId>
+            <artifactId>opencensus-contrib-grpc-metrics</artifactId>
+            <version>0.12.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jvnet/animal-sniffer-annotation -->
+        <dependency>
+            <groupId>org.jvnet</groupId>
+            <artifactId>animal-sniffer-annotation</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.checkerframework/checker-compat-qual -->
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-compat-qual</artifactId>
+            <version>2.5.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.errorprone/error_prone_annotations -->
+        <dependency>
+            <groupId>com.google.errorprone</groupId>
+            <artifactId>error_prone_annotations</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.2.0.BUILD-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>8.5.32</version>
+        </dependency>
+
+        <!-- ASR 所需包结束-->
 
     </dependencies>
 
