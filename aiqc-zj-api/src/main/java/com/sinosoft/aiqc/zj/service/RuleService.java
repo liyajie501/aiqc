@@ -106,13 +106,13 @@ public class RuleService {
     /**
      * 规则详细信息查询
      */
-    public int detailedInfo(RuleAddReqDto ruleAddReqDto) {
+    public Map<String, Object> selectDetailedInfoByRuleId(RuleAddReqDto ruleAddReqDto) {
         logger.info("detailedInfo 方法入参：" + ruleAddReqDto.toString());
 
-        int resule = ruleDbService.detailedInfo(ruleAddReqDto.getRuleId());
+        Map<String, Object> detailedInfoMap = ruleDbService.selectDetailedInfoByRuleId(ruleAddReqDto.getRuleId());
 
-        logger.info("updateRule 方法出参：" + resule);
-        return resule;
+        logger.info("updateRule 方法出参：" + detailedInfoMap.toString());
+        return detailedInfoMap;
 
     }
 

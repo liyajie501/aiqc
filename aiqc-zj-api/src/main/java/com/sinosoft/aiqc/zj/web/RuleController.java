@@ -104,10 +104,11 @@ public class RuleController {
         logger.info("detailedInfo 规则详细信息接口请求报文：" + ruleStr);
         RuleAddReqDto ruleAddReqDto = JSON.parseObject(ruleStr, RuleAddReqDto.class);
 
-       ruleService.detailedInfo(ruleAddReqDto);
+        Map<String, Object> detailedInfoMap = ruleService.selectDetailedInfoByRuleId(ruleAddReqDto);
 
-
-        return "";
+        String resultStr = JSON.toJSONString(detailedInfoMap);
+        logger.info("detailedInfo 规则详细信息接口响应报文：" + resultStr);
+        return resultStr;
     }
 
 }

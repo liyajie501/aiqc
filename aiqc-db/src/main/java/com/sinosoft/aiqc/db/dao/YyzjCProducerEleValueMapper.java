@@ -2,10 +2,10 @@ package com.sinosoft.aiqc.db.dao;
 
 import com.sinosoft.aiqc.db.domain.YyzjCProducerEleValue;
 import com.sinosoft.aiqc.db.domain.YyzjCProducerEleValueExample;
-import java.util.List;
-
 import com.sinosoft.aiqc.db.domain.extend.YyzjCProducerEleValueExt;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface YyzjCProducerEleValueMapper {
     /**
@@ -133,5 +133,5 @@ public interface YyzjCProducerEleValueMapper {
     int updateByPrimaryKey(YyzjCProducerEleValue record);
 
 
-    List<YyzjCProducerEleValueExt> getProducerEleValueExt(String ruleId);
+    List<YyzjCProducerEleValueExt> getProducerEleValueExt(@Param("ruleId") String ruleId);
 }

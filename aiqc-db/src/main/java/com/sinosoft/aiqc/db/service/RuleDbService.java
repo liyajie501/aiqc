@@ -5,6 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.sinosoft.aiqc.db.dao.*;
 import com.sinosoft.aiqc.db.domain.*;
+import com.sinosoft.aiqc.db.domain.extend.YyzjCProducerEleValueExt;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +29,7 @@ public class RuleDbService {
     @Resource
     private YyzjCProducerEleGroupMapper yyzjCProducerEleGroupMapper;
     @Resource
-    private YyzjCProducerEleValueMapper YyzjCProducerEleValueMapper;
+    private YyzjCProducerEleValueMapper yyzjCProducerEleValueMapper;
     @Resource
     private YyzjCRuleToTypeMapper yyzjCRuleToTypeMapper;
     @Resource
@@ -130,7 +131,7 @@ public class RuleDbService {
         List<YyzjCProducerEleValue> producerEleValueList = JSON.parseObject(addMap.get("producerEleValueList"), List.class);
         for (YyzjCProducerEleValue producerEleValue : producerEleValueList) {
             producerEleValue.setEleGroupId(Integer.toString(groupId_int));
-            resuleNum = YyzjCProducerEleValueMapper.insertSelective(producerEleValue);
+            resuleNum = yyzjCProducerEleValueMapper.insertSelective(producerEleValue);
         }
 
         return resuleNum;
@@ -171,11 +172,16 @@ public class RuleDbService {
      * @param ruleId
      * @return
      */
-    public Map selectDetailedInfoByRuleId(String ruleId) {
+    public  Map<String, Object> selectDetailedInfoByRuleId(String ruleId) {
         Map<String, Object> detailedInfoMap = new HashMap<>();
+
         YyzjCRule yyzjCRule = yyzjCRuleMapper.selectByPrimaryKey(ruleId);
 
-        detailedInfoMap.put();
-        return ;
+        List<YyzjCProducerEleValueExt> yyzjCProducerEleValueExtList = yyzjCProducerEleValueMapper.getProducerEleValueExt(ruleId);
+
+        detailedInfoMap.put("ruleInfo", yyzjCRule);
+        detailedInfoMap.put("item", yyzjCProducerEleValueExtList);
+
+        return detailedInfoMap;
     }
 }

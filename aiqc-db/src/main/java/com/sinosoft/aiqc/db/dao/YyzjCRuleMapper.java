@@ -3,6 +3,7 @@ package com.sinosoft.aiqc.db.dao;
 import com.sinosoft.aiqc.db.domain.ModelToRule;
 import com.sinosoft.aiqc.db.domain.YyzjCRule;
 import com.sinosoft.aiqc.db.domain.YyzjCRuleExample;
+import com.sinosoft.aiqc.db.domain.extend.YyzjCRuleExt;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -172,5 +173,7 @@ public interface YyzjCRuleMapper {
     List<ModelToRule> selectRulesByModelId(String modelId);
 
     List<YyzjCRule> selectByPrimaryKeys(List<String> var1);
+
+    YyzjCRuleExt selectDetailedInfoByPrimaryKey(String ruleId);
 
 }
