@@ -83,14 +83,14 @@
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
-            <version>5.5.3</version>
+            <version>6.8.17</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch -->
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
-            <version>7.2.0</version>
+            <version>6.8.17</version>
         </dependency>
 
 
